@@ -1,0 +1,6 @@
+:root,
+.dark {
+  --max-content-width: 1400px;
+  --main-padding: 5rem;
+  --mobile-padding: 2rem;
+}
