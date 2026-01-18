@@ -1,6 +1,6 @@
 import SectionTag from "../components/SectionTag";
 
-export const About = () => {
+const About = () => {
   return (
     <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main  py-16 items-center justify-center relative overflow-hidden bg-color-surface-muted">
       <div className="max-w-content mx-auto w-full">
@@ -50,3 +50,5 @@ export const About = () => {
     </section>
   );
 };
+
+export default About;
