@@ -5,7 +5,7 @@ export default function CTA() {
   return (
     <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 lg:py-20 items-center justify-center relative overflow-hidden bg-color-accent">
       <div className="max-w-content mx-auto w-full">
-        <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
+        <div className="flex flex-col items-start space-y-6 lg:space-y-8">
           {/* Heading */}
           <h2
             className="text-fontsize-h1 font-fontweight-bold text-color-text-white leading-lineheight-heading max-w-3xl"
@@ -17,7 +17,7 @@ export default function CTA() {
 
           {/* Subtext */}
           <p
-            className="text-fontsize-body text-color-text-white/90 leading-lineheight-body max-w-2xl"
+            className="text-fontsize-body text-color-text-white leading-lineheight-body max-w-2xl opacity-80"
             data-testid="cta-description"
           >
             Book a free consultation with our expert advisors and discover the
@@ -78,7 +78,7 @@ export default function CTA() {
 
           {/* Contact Info */}
           <div
-            className="flex flex-col sm:flex-row items-center gap-4 text-color-text-white/80 text-fontsize-small mt-4"
+            className="flex flex-col sm:flex-row items-start gap-4 text-color-text-white text-fontsize-small mt-4 opacity-80"
             data-testid="contact-info"
           >
             <div className="flex items-center gap-2">

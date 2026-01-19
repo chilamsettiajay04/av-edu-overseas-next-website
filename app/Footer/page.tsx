@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Company Info */}
           <div className="space-y-4" data-testid="footer-company">
-            <div className="w-32 h-10">
+            <div className="w-fit h-10">
               <img
                 src="./logo.png"
                 alt="Company Logo"
