@@ -35,7 +35,7 @@ export default function Home() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           ref={worldRef}
-          src="/Home/world.svg"
+          src="./Home/world.svg"
           alt="World Map Background"
           className="
             w-auto h-full object-cover object-top

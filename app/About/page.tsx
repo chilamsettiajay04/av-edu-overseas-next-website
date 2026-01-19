@@ -9,13 +9,45 @@ const About = () => {
       <div className="max-w-content mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           {/* Image Grid */}
-          <div className=" h-full">
+          <div className="grid grid-cols-6 gap-2 lg:gap-4">
             <img
-              src="/About/collage.png"
-              alt="collage.png"
-              className="w-auto h-full"
+              src="./About/img1.jpg"
+              className="w-full h-full object-cover col-span-2 row-span-2 rounded-xl"
+            />
+            <img
+              src="./About/img2.jpg"
+              className="w-full h-full object-cover col-span-2 rounded-xl"
+            />
+            <div className="flex flex-col gap-2 lg:gap-4">
+              <img
+                src="./About/img3.jpg"
+                className="w-full h-full object-cover rounded-xl"
+              />
+              <img
+                src="./About/img3.jpg"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
+            <img
+              src="./About/img4.jpg"
+              className="w-full h-full object-cover row-span-2 rounded-xl"
+            />
+            <div className="flex flex-col gap-2 lg:gap-4">
+              <img
+                src="./About/img5.jpg"
+                className="w-full h-full object-cover rounded-xl"
+              />
+              <img
+                src="./About/img5.jpg"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
+            <img
+              src="./About/img6.jpg"
+              className="w-full h-full object-cover col-span-2 rounded-xl"
             />
           </div>
+
           {/* Text Content */}
           <div className="order-2 lg:order-1 flex flex-col justify-center">
             <div className="space-y-6 lg:space-y-8">
