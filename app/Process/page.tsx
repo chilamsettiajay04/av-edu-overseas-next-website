@@ -1,10 +1,6 @@
 import SectionTag from "../components/SectionTag";
-import {
-  MessageSquare,
-  FileCheck,
-  GraduationCap,
-  Plane,
-} from "lucide-react";
+import ProcessStepCard from "../components/ProcessStepCard";
+import { MessageSquare, FileCheck, GraduationCap, Plane } from "lucide-react";
 
 export default function Process() {
   const steps = [
@@ -41,109 +37,37 @@ export default function Process() {
   return (
     <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 items-center justify-center relative overflow-hidden bg-color-surface">
       <div className="max-w-content mx-auto w-full">
-        {/* Section Header */}
-        <div className="text-center mb-10 lg:mb-14 space-y-4">
-          <div className="flex justify-center">
+        {/* Header */}
+        <div className="mb-10 lg:mb-14 space-y-4">
+          <div className="flex">
             <SectionTag variant="accent" label="How It Works" />
           </div>
-          <h2
-            className="text-fontsize-h1 font-fontweight-bold text-color-text-primary leading-lineheight-heading"
-            data-testid="process-heading"
-          >
-            Your Journey to
-            <span className="block text-color-text-accent mt-2">
+
+          <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
+            Your journey to
+            <span className="text-color-text-accent ml-1">
               Study Abroad Success
             </span>
           </h2>
-          <p
-            className="text-fontsize-body text-color-text-muted leading-lineheight-body max-w-2xl mx-auto"
-            data-testid="process-description"
-          >
+
+          <p className="text-fontsize-body text-color-text-muted leading-lineheight-body">
             We guide you through every step of your international education
             journey with personalized support and expert advice.
           </p>
         </div>
 
-        {/* Process Steps */}
-        <div className="relative">
-          {/* Steps Grid */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10"
-            data-testid="process-steps"
-          >
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-start"
-                data-testid={`process-step-${index}`}
-              >
-                {/* Icon Circle */}
-                <div
-                  className="
-                    w-16 h-16 lg:w-20 lg:h-20
-                    rounded-tl-2xl rounded-br-2xl
-                    bg-color-accent
-                    text-color-text-white
-                    flex items-center justify-center
-                    mb-4
-                    shadow-shadow-md
-                    transition-transform duration-300
-                    hover:scale-110
-                  "
-                  data-testid={`step-icon-${index}`}
-                >
-                  {step.icon}
-                </div>
-
-                {/* Step Number */}
-                <div
-                  className="text-fontsize-caption font-fontweight-bold text-color-text-accent mb-2"
-                  data-testid={`step-number-${index}`}
-                >
-                  STEP {step.number}
-                </div>
-
-                {/* Step Title */}
-                <h3
-                  className="text-fontsize-h3 font-fontweight-bold text-color-text-primary mb-3 leading-lineheight-heading"
-                  data-testid={`step-title-${index}`}
-                >
-                  {step.title}
-                </h3>
-
-                {/* Step Description */}
-                <p
-                  className="text-fontsize-small text-color-text-muted leading-lineheight-body"
-                  data-testid={`step-description-${index}`}
-                >
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-12 lg:mt-16 text-center" data-testid="process-cta">
-          <p className="text-fontsize-body text-color-text-muted mb-4">
-            Ready to take the first step?
-          </p>
-          <button
-            className="
-              inline-flex items-center justify-center
-              px-6 py-3
-              bg-color-accent text-color-text-white
-              text-fontsize-body font-fontweight-medium
-              rounded-tl-2xl rounded-br-2xl
-              hover:bg-color-accent-hover
-              transition-all duration-200
-              hover:scale-105
-              shadow-shadow-sm
-            "
-            data-testid="start-journey-btn"
-          >
-            Start Your Journey Today
-          </button>
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {steps.map((step, index) => (
+            <ProcessStepCard
+              key={index}
+              index={index}
+              number={step.number}
+              title={step.title}
+              description={step.description}
+              icon={step.icon}
+            />
+          ))}
         </div>
       </div>
     </section>

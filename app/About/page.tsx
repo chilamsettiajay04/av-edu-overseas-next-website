@@ -7,9 +7,9 @@ const About = () => {
       id="about"
     >
       <div className="max-w-content mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+        {/* <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch"> */}
           {/* Image Grid */}
-          <div className="grid grid-cols-6 gap-2 lg:gap-4">
+          {/* <div className="grid grid-cols-6 gap-2 lg:gap-4">
             <img
               src="./About/img1.jpg"
               className="w-full h-full object-cover col-span-2 row-span-2 rounded-xl"
@@ -46,10 +46,10 @@ const About = () => {
               src="./About/img6.jpg"
               className="w-full h-full object-cover col-span-2 rounded-xl"
             />
-          </div>
+          </div> */}
 
           {/* Text Content */}
-          <div className="order-2 lg:order-1 flex flex-col justify-center">
+          <div className="order-2 lg:order-1 flex flex-col justify-center items-center">
             <div className="space-y-6 lg:space-y-8">
               <SectionTag variant="accent" label="Our Story" />
               <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
@@ -89,7 +89,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </section>
   );

@@ -75,7 +75,7 @@ export default function Services() {
   return (
     <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 items-center justify-center relative overflow-hidden bg-color-surface" id="services">
       {/* Main Content */}
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8 lg:mb-10">
+      {/* <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8 lg:mb-10"> */}
         {/* Text Content */}
         <div className="space-y-6 lg:space-y-8">
           <SectionTag variant="accent" label="Our Services" />
@@ -106,7 +106,7 @@ export default function Services() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 gap-4 lg:gap-6">
+        {/* <div className="grid grid-cols-2 gap-4 lg:gap-6">
           <StatCard
             value="6+"
             label="Services"
@@ -127,11 +127,11 @@ export default function Services() {
             label="Support"
             icon={<Clock className="w-16 h-16 lg:w-20 lg:h-20" />}
           />
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Services Grid Section */}
-      <div className="w-full">
+      <div className="w-full mt-8 lg:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <div key={index}>

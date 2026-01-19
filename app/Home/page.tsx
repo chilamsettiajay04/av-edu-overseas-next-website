@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-dvh w-full pt-16 px-mobile lg:px-main items-center justify-center relative overflow-hidden bg-color-background">
+    <div className="flex flex-col min-h-fit mt-16 lg:mt-0 lg:min-h-dvh w-full py-16 px-mobile lg:px-main items-center justify-center relative overflow-hidden bg-color-background">
       {/* 🌍 Interactive World Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
@@ -90,12 +90,12 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-5">
-          <Button label="Get In Touch" size="md" className="w-[200px] py-3" />
+          <Button label="Get In Touch" size="md" className="w-[300px] py-3" />
           <Button
             label="Learn More"
             variant="secondary"
             size="md"
-            className="w-[200px] py-3"
+            className="w-[300px] py-3"
           />
         </div>
       </div>

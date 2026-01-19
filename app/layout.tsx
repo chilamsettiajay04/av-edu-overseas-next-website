@@ -48,7 +48,7 @@ export default function RootLayout({
           <Navbar />
 
           {/* Main Content */}
-          <main className="flex-1 w-full max-w-[1200px] mx-auto px-4">
+          <main className="flex-1 w-full max-w-[1200px] mx-auto">
             {children}
           </main>
 

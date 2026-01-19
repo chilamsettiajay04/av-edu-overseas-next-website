@@ -53,9 +53,9 @@ const Button: React.FC<ButtonProps> = ({
 
   // ✅ Diagonal border radius (Top-Left & Bottom-Right only)
   const radius = {
-    sm: "rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none",
-    md: "rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none",
-    lg: "rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none",
+    sm: "rounded-lg",
+    md: "rounded-xl",
+    lg: "rounded-2xl",
   };
 
   return (
