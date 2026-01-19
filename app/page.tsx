@@ -1,6 +1,8 @@
 import About from "./About/page";
 import Home from "./Home/page";
 import Services from "./services/page";
+import Trust from "./Trust/page";
+import Process from "./Process/page";
 
 export default function MainEntry() {
   return (
@@ -8,6 +10,8 @@ export default function MainEntry() {
       <Home />
       <About />
       <Services />
+      <Process />
+      <Trust />
     </div>
   );
 }

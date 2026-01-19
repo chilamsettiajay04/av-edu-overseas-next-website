@@ -1,24 +1,21 @@
-interface NavLinkProps {
+interface NavlinkProps {
   label: string;
-  href?: string;
+  href: string;
   active?: boolean;
+  onClick?: () => void;
 }
 
-const Navlink: React.FC<NavLinkProps> = ({
-  label,
-  href = "#",
-  active = false,
-}) => {
+const Navlink = ({ label, href, active, onClick }: NavlinkProps) => {
   return (
-    <li
-      className={`
-        relative cursor-pointer transition-all duration-200 text-fontsize-small
-        hover:text-color-text-primary hover:scale-105
-        ${active ? "text-color-text-primary" : "text-color-text-muted"}
-      `}
+    <a
+      href={href}
+      onClick={onClick}
+      className={`hover:text-color-text-primary cursor-pointer lg:text-fontsize-small ${
+        active ? "text-color-text-accent" : "text-color-text-muted"
+      }`}
     >
-      <a href={href}>{label}</a>
-    </li>
+      {label}
+    </a>
   );
 };
 

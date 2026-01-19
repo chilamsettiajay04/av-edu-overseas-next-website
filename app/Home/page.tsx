@@ -77,13 +77,13 @@ export default function Home() {
             <span className="whitespace-nowrap">500+ Students Placed</span>
           </div>
         </div>
-        <h1 className="text-fontsize-display font-fontfamily-display font-fontweight-medium leading-lineheight-display text-color-text-primary">
+        <h1 className="text-fontsize-display font-fontfamily-display font-fontweight-bold leading-lineheight-display text-color-text-primary">
           Turning Dreams into
           <span className="text-color-text-accent">International</span> Degrees
         </h1>
 
         <div className="text-center w-full lg:w-[55%] flex items-center justify-center">
-          <p className="text-fontsize-h3 max-w-3xl text-color-text-muted font-fontweight-regular leading-lineheight-body">
+          <p className="text-fontsize-body max-w-3xl text-color-text-muted font-fontweight-regular leading-lineheight-body">
             Empowering international students and recruitment partners to access
             world-class education at leading global universities.
           </p>

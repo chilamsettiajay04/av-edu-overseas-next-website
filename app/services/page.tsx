@@ -73,17 +73,15 @@ export default function Services() {
   ];
 
   return (
-    <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 items-center justify-center relative overflow-hidden bg-color-surface">
+    <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 items-center justify-center relative overflow-hidden bg-color-surface" id="services">
       {/* Main Content */}
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8 lg:mb-10">
         {/* Text Content */}
         <div className="space-y-6 lg:space-y-8">
           <SectionTag variant="accent" label="Our Services" />
-          <h2 className="text-fontsize-h1 font-fontweight-bold text-color-text-primary leading-lineheight-heading">
+          <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
             Your Trusted Partner for
-            <span className="block text-color-text-accent mt-2">
-              Overseas Success
-            </span>
+            <span className="text-color-text-accent ml-1">Overseas</span>
           </h2>
 
           <div className="space-y-4 lg:space-y-6">
