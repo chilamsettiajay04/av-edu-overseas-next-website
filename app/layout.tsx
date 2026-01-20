@@ -5,6 +5,7 @@ import "./styles/globals.css";
 import Navbar from "./Navbar/page";
 import CTA from "./CTA/page";
 import Footer from "./Footer/page";
+import Home from "./Home/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,9 +47,10 @@ export default function RootLayout({
         <div className="min-h-[100dvh] flex flex-col overflow-x-hidden">
           {/* Navbar */}
           <Navbar />
+          <Home />
 
           {/* Main Content */}
-          <main className="flex-1 w-full max-w-[1200px] mx-auto">
+          <main className="flex-1 w-full max-w-[1400px] mx-auto">
             {children}
           </main>
 

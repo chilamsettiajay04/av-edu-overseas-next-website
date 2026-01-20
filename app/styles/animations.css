@@ -1,31 +1,42 @@
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-slideDown {
-  animation: slideDown 0.3s ease-out;
-}
-
-@keyframes marquee {
+/* Top marquee - scroll left */
+@keyframes marquee-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);
   }
 }
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-@media (hover: hover) {
-  .animate-marquee:hover {
-    animation-play-state: paused;
+
+/* Bottom marquee - scroll right */
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
   }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Marquee container styling */
+.marquee {
+  display: flex;
+  gap: 0.3rem; /* space between images */
+  width: max-content; /* ensures content width can scroll */
+}
+
+/* Top marquee animation */
+.marquee-left {
+  animation: marquee-left 25s linear infinite;
+}
+
+/* Bottom marquee animation */
+.marquee-right {
+  animation: marquee-right 25s linear infinite;
+}
+
+/* Optional: pause on hover */
+.marquee-left:hover,
+.marquee-right:hover {
+  animation-play-state: paused;
 }

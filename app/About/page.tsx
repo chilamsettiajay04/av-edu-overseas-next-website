@@ -1,4 +1,15 @@
+import { Grid } from "lucide-react";
 import SectionTag from "../components/SectionTag";
+
+const images = [
+  "./About/image1.png",
+  "./About/image2.png",
+  "./About/image3.png",
+  "./About/image4.jpg",
+  "./About/image5.jpg",
+  "./About/image6.jpg",
+  "./About/image7.jpg",
+];
 
 const About = () => {
   return (
@@ -7,54 +18,49 @@ const About = () => {
       id="about"
     >
       <div className="max-w-content mx-auto w-full">
-        {/* <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch"> */}
-          {/* Image Grid */}
-          {/* <div className="grid grid-cols-6 gap-2 lg:gap-4">
-            <img
-              src="./About/img1.jpg"
-              className="w-full h-full object-cover col-span-2 row-span-2 rounded-xl"
-            />
-            <img
-              src="./About/img2.jpg"
-              className="w-full h-full object-cover col-span-2 rounded-xl"
-            />
-            <div className="flex flex-col gap-2 lg:gap-4">
-              <img
-                src="./About/img3.jpg"
-                className="w-full h-full object-cover rounded-xl"
-              />
-              <img
-                src="./About/img3.jpg"
-                className="w-full h-full object-cover rounded-xl"
-              />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+          <div className="order-2 lg:order-1 grid grid-cols-1 gap-1 overflow-hidden rounded-br-3xl rounded-tl-3xl relative">
+            {/* Glassy Emerald/Teal Tag */}
+            <div className="absolute top-5 lg:top-auto lg:bottom-5 left-0 z-10 inline-flex items-center gap-2 px-4 py-2 text-fontsize-caption font-semibold text-color-text-white rounded-r-full backdrop-blur-lg border border-amber-400/30 bg-gradient-to-r from-amber-500/15 to-orange-500/15 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105">
+              <Grid className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="whitespace-nowrap">Gallery</span>
             </div>
-            <img
-              src="./About/img4.jpg"
-              className="w-full h-full object-cover row-span-2 rounded-xl"
-            />
-            <div className="flex flex-col gap-2 lg:gap-4">
-              <img
-                src="./About/img5.jpg"
-                className="w-full h-full object-cover rounded-xl"
-              />
-              <img
-                src="./About/img5.jpg"
-                className="w-full h-full object-cover rounded-xl"
-              />
+            {/* Top marquee */}
+            <div className="relative w-full overflow-hidden">
+              <div className="marquee marquee-left">
+                {[...images, ...images].map((src, index) => (
+                  <img
+                    key={`top-${index}`}
+                    src={src}
+                    className="h-56 w-full object-cover aspect-video"
+                    alt=""
+                  />
+                ))}
+              </div>
             </div>
-            <img
-              src="./About/img6.jpg"
-              className="w-full h-full object-cover col-span-2 rounded-xl"
-            />
-          </div> */}
+
+            {/* Bottom marquee */}
+            <div className="relative w-full overflow-hidden">
+              <div className="marquee marquee-right">
+                {[...images, ...images].map((src, index) => (
+                  <img
+                    key={`bottom-${index}`}
+                    src={src}
+                    className="h-56 w-auto object-cover"
+                    alt=""
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* Text Content */}
-          <div className="order-2 lg:order-1 flex flex-col justify-center items-center">
+          <div className="order-1 lg:order-2 flex flex-col justify-center items-center">
             <div className="space-y-6 lg:space-y-8">
               <SectionTag variant="accent" label="Our Story" />
               <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
                 Your Global Education
-                <span className="text-color-text-accent ml-1">Partner</span>
+                <span className="text-color-text-accent ml-2">Partner</span>
               </h2>
 
               <div className="space-y-4 lg:space-y-6">
@@ -89,7 +95,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        {/* </div> */}
+        </div>
       </div>
     </section>
   );

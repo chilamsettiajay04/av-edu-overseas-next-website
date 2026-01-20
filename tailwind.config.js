@@ -23,6 +23,7 @@ module.exports = {
         },
 
         // Background colors
+        "color-home-background": "var(--home-background)",
         "color-background": "var(--background)",
         "color-background-inverted": "var(--inverted-background)",
 

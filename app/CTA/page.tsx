@@ -5,10 +5,10 @@ export default function CTA() {
   return (
     <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 lg:py-20 items-center justify-center relative overflow-hidden bg-color-accent">
       <div className="max-w-content mx-auto w-full">
-        <div className="flex flex-col items-start space-y-6 lg:space-y-8">
+        <div className="flex flex-col items-start lg:items-center space-y-6 lg:space-y-8">
           {/* Heading */}
           <h2
-            className="text-fontsize-h1 font-fontweight-bold text-color-text-white leading-lineheight-heading max-w-3xl"
+            className="text-fontsize-h1 font-fontweight-bold text-color-text-white leading-lineheight-heading lg:text-center max-w-3xl"
             data-testid="cta-heading"
           >
             Ready to Begin Your
@@ -17,7 +17,7 @@ export default function CTA() {
 
           {/* Subtext */}
           <p
-            className="text-fontsize-body text-color-text-white leading-lineheight-body max-w-2xl opacity-80"
+            className="text-fontsize-body text-color-text-white leading-lineheight-body lg:text-center max-w-2xl opacity-80"
             data-testid="cta-description"
           >
             Book a free consultation with our expert advisors and discover the
@@ -64,14 +64,14 @@ export default function CTA() {
               label="Book Free Consultation"
               variant="secondary"
               size="lg"
-              className="bg-color-text-white text-color-accent hover:bg-color-surface-muted w-full sm:w-auto"
+              className="bg-white text-black w-full sm:w-auto"
               data-testid="book-consultation-btn"
             />
             <Button
               label="Call Us Now"
-              variant="ghost"
+              variant="secondary"
               size="lg"
-              className="text-color-text-white border border-color-text-white hover:bg-white/10 w-full sm:w-auto"
+              className="w-full sm:w-auto text-white hover:text-black"
               data-testid="call-now-btn"
             />
           </div>

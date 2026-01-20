@@ -35,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
       shadow-shadow-sm
     `,
     secondary: `
-      bg-color-surface text-color-text-primary
+      bg-transparent text-color-text-primary
       border border-color-border
       hover:bg-color-surface-muted
     `,

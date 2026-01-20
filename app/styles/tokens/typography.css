@@ -6,7 +6,7 @@
   --font-mono: "Fira Code", monospace;
   --font-display-family: "Manrope", "Geist", "Poppins", Arial, sans-serif;
   /* FONT SIZES (responsive) */
-  --font-display: clamp(2.2rem, 1.5rem + 4vw, 5rem);
+  --font-display: clamp(2.2rem, 2rem + 2vw, 4.2rem);
   --font-h1: clamp(2rem, 5.5vw, 2rem); /* ~32px max */
   --font-h2: clamp(1.5rem, 4.5vw, 1.5rem); /* ~24px max */
   --font-h3: clamp(1.125rem, 4vw, 1.125rem); /* ~18px max */

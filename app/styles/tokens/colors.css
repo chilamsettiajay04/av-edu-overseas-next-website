@@ -2,6 +2,7 @@
   /* ACCENT */
   --accent: #20b284;
   --accent-hover: #1a9a72;
+  --home-background: #1a2231;
 
   /* BACKGROUND */
   --background: #ffffff;
@@ -46,6 +47,7 @@
 .dark {
   --accent: #2dd4a1;
   --accent-hover: #20b284;
+  --home-background: #1a2231;
   --background: #000000;
   --inverted-background: #ffffff;
   --surface-muted: #0d0d0d;

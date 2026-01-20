@@ -35,19 +35,20 @@ export default function Process() {
   ];
 
   return (
-    <section className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 items-center justify-center relative overflow-hidden bg-color-surface">
+    <section
+      className="flex flex-col min-h-fit w-full px-mobile lg:px-main py-16 items-center justify-center relative overflow-hidden bg-color-surface-muted"
+      id="process"
+    >
       <div className="max-w-content mx-auto w-full">
         {/* Header */}
-        <div className="mb-10 lg:mb-14 space-y-4">
+        <div className="mb-8 lg:mb-10 space-y-4">
           <div className="flex">
             <SectionTag variant="accent" label="How It Works" />
           </div>
 
           <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
-            Your journey to
-            <span className="text-color-text-accent ml-1">
-              Study Abroad Success
-            </span>
+            Your Journey To
+            <span className="text-color-text-accent ml-2">Study Abroad</span>
           </h2>
 
           <p className="text-fontsize-body text-color-text-muted leading-lineheight-body">
