@@ -112,7 +112,7 @@ const Navbar = () => {
       {showFab && (
         <button
           onClick={toggleMenu}
-          className="md:hidden fixed bottom-6 right-6 z-[55] w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-blue-700 hover:scale-110"
+          className="md:hidden fixed bottom-6 right-6 z-[55] w-14 h-14 rounded-full bg-color-accent text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-blue-700 hover:scale-110"
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? (
