@@ -127,6 +127,7 @@ import { Play, Users, GraduationCap } from "lucide-react";
 import Button from "../components/Button";
 import openWhatsApp from "../utils/whatsapp";
 import makePhoneCall from "../utils/mobile";
+import { siteContent } from "../constants/siteContent";
 
 const HeroSection = () => {
   return (
@@ -140,14 +141,13 @@ const HeroSection = () => {
         <div className="flex flex-col gap-6 text-center lg:text-left">
           {/* Heading */}
           <h1 className="text-fontsize-display text-left text-color-text-white leading-lineheight-heading font-fontweight-bold animate-fade-in-up animation-delay-100 ">
-             Ambition Meets{" "}
-            <span className="text-color-text-accent">Opportunity</span>
+            {siteContent.home.heading.text}{" "}
+            <span className="text-color-text-accent">{siteContent.home.heading.highlight}</span>
           </h1>
 
           {/* Sub Heading (IMPORTANT) */}
           <p className="text-fontsize-body text-left text-color-text-white opacity-70 max-w-xl animate-fade-in-up animation-delay-200">
-            Study abroad and let your education go beyond borders. We guide
-            students and partners to the world's top universities.
+            {siteContent.home.subHeading}
           </p>
 
           {/* CTA Buttons */}
@@ -156,7 +156,7 @@ const HeroSection = () => {
             data-testid="cta-buttons"
           >
             <Button
-              label="Book Free Consultation"
+              label={siteContent.home.buttons.book}
               onClick={() => openWhatsApp()}
               variant="primary"
               size="lg"
@@ -164,7 +164,7 @@ const HeroSection = () => {
               data-testid="book-consultation-btn"
             />
             <Button
-              label="Call Us Now"
+              label={siteContent.home.buttons.call}
               onClick={() => makePhoneCall()}
               variant="secondary"
               size="lg"
@@ -174,37 +174,23 @@ const HeroSection = () => {
           </div>
 
           {/* Trust Indicators */}
+          {/* Trust Indicators */}
           <div className="flex items-center justify-start  gap-6 lg:gap-10 animate-fade-in-up animation-delay-400">
-            <div className="text-start">
-              <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
-                98%
+            {siteContent.home.trust.map((item, index) => (
+              <div key={index} className="flex items-center">
+                <div className="text-start">
+                  <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
+                    {item.value}
+                  </div>
+                  <p className="text-fontsize-caption text-color-text-white opacity-60">
+                    {item.label}
+                  </p>
+                </div>
+                {index < siteContent.home.trust.length - 1 && (
+                  <div className="w-px h-12 bg-color-border-divider ml-6 lg:ml-10" />
+                )}
               </div>
-              <p className="text-fontsize-caption text-color-text-white opacity-60">
-                Visa Success
-              </p>
-            </div>
-
-            <div className="w-px h-12 bg-color-border-divider" />
-
-            <div className="text-start">
-              <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
-                50+
-              </div>
-              <p className="text-fontsize-caption text-color-text-white opacity-60">
-                Universities
-              </p>
-            </div>
-
-            <div className="w-px h-12 bg-color-border-divider" />
-
-            <div className="text-start">
-              <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
-                10+
-              </div>
-              <p className="text-fontsize-caption text-color-text-white opacity-60">
-                Countries
-              </p>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -237,10 +223,10 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <div className="text-fontsize-h6 text-color-text-white font-fontweight-bold">
-                    1000+
+                    {siteContent.home.floatingCards.card1.value}
                   </div>
                   <p className="text-fontsize-caption text-color-text-white opacity-70">
-                    Students Trusted
+                    {siteContent.home.floatingCards.card1.label}
                   </p>
                 </div>
               </div>
@@ -254,10 +240,10 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <div className="text-fontsize-h6 text-color-text-white font-fontweight-bold">
-                    Expert Team
+                    {siteContent.home.floatingCards.card2.value}
                   </div>
                   <p className="text-fontsize-caption text-color-text-white opacity-70">
-                    2+ Years Experience
+                    {siteContent.home.floatingCards.card2.label}
                   </p>
                 </div>
               </div>

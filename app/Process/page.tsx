@@ -1,38 +1,23 @@
 import SectionTag from "../components/SectionTag";
 import ProcessStepCard from "../components/ProcessStepCard";
 import { MessageSquare, FileCheck, GraduationCap, Plane } from "lucide-react";
+import { siteContent } from "../constants/siteContent";
 
 export default function Process() {
-  const steps = [
-    {
-      number: "01",
-      title: "Free Consultation",
-      description:
-        "Schedule a personalized consultation to discuss your academic goals, preferred destinations, and program options.",
-      icon: <MessageSquare className="w-6 h-6" />,
-    },
-    {
-      number: "02",
-      title: "Application Support",
-      description:
-        "Get expert assistance with university selection, document preparation, SOP/LOR writing, and application submission.",
-      icon: <FileCheck className="w-6 h-6" />,
-    },
-    {
-      number: "03",
-      title: "Admission & Visa",
-      description:
-        "Receive offer letters from top universities. We handle visa documentation, interview preparation, and submission.",
-      icon: <GraduationCap className="w-6 h-6" />,
-    },
-    {
-      number: "04",
-      title: "Pre-Departure",
-      description:
-        "Complete pre-departure briefing, accommodation assistance, travel arrangements, and on-ground support abroad.",
-      icon: <Plane className="w-6 h-6" />,
-    },
+  const icons = [
+    MessageSquare,
+    FileCheck,
+    GraduationCap,
+    Plane,
   ];
+
+  const steps = siteContent.process.steps.map((step, index) => {
+    const Icon = icons[index];
+    return {
+      ...step,
+      icon: <Icon className="w-6 h-6" />,
+    };
+  });
 
   return (
     <section
@@ -43,17 +28,16 @@ export default function Process() {
         {/* Header */}
         <div className="mb-8 lg:mb-10 space-y-4">
           <div className="flex">
-            <SectionTag variant="accent" label="How It Works" />
+            <SectionTag variant="accent" label={siteContent.process.sectionTag} />
           </div>
 
           <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
-            Your Journey To
-            <span className="text-color-text-accent ml-2">Study Abroad</span>
+            {siteContent.process.heading.text}
+            <span className="text-color-text-accent ml-2">{siteContent.process.heading.highlight}</span>
           </h2>
 
           <p className="text-fontsize-body text-color-text-muted leading-lineheight-body">
-            We guide you through every step of your international education
-            journey with personalized support and expert advice.
+            {siteContent.process.description}
           </p>
         </div>
 

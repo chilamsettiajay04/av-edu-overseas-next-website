@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteContent } from "./constants/siteContent";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 
@@ -20,41 +21,12 @@ const geistMono = Geist_Mono({
 /* ---------------- METADATA ---------------- */
 
 export const metadata: Metadata = {
-  title: "AV Edu Overseas – International Education & Visa Guidance",
-  description:
-    "AV Edu Overseas offers expert guidance for studying abroad, including international education programs, student visa assistance, and personalized support for your overseas education journey.",
-  keywords: [
-    "AV Edu Overseas",
-    "study abroad",
-    "international education",
-    "student visa guidance",
-    "overseas study consultants",
-    "admissions support",
-  ],
-  authors: [{ name: "AV Edu Overseas" }],
-  openGraph: {
-    title: "AV Edu Overseas – Study Abroad & Visa Guidance",
-    description:
-      "Get expert guidance for international education, visa processing, and study abroad opportunities with AV Edu Overseas.",
-    url: "https://chilamsettiajay04.github.io/av-edu-overseas-next-website/",
-    siteName: "AV Edu Overseas",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AV Edu Overseas",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AV Edu Overseas – Study Abroad & Visa Guidance",
-    description:
-      "Expert study abroad guidance, visa support, and international education consulting.",
-    images: ["/og-image.png"],
-  },
+  title: siteContent.seo.title,
+  description: siteContent.seo.description,
+  keywords: siteContent.seo.keywords,
+  authors: [{ name: siteContent.global.brandName }],
+  openGraph: siteContent.seo.openGraph,
+  twitter: siteContent.seo.twitter as Metadata["twitter"],
 };
 
 /* ---------------- VIEWPORT (CRITICAL) ---------------- */

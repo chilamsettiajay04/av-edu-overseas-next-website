@@ -1,6 +1,6 @@
-import { MOBILE_NUMBER } from "../constants/constants";
+import { siteContent } from "../constants/siteContent";
 
-const makePhoneCall = (phoneNumber: string = MOBILE_NUMBER): void => {
+const makePhoneCall = (phoneNumber: string = siteContent.contact.mobileNumber): void => {
   if (typeof window === "undefined") return;
 
   window.location.href = `tel:${phoneNumber}`;

@@ -1,8 +1,8 @@
-import { WHATSAPP_MESSAGE, MOBILE_NUMBER } from "../constants/constants";
+import { siteContent } from "../constants/siteContent";
 
 const openWhatsAppApp = (
-  phoneNumber: string = MOBILE_NUMBER,
-  message: string = WHATSAPP_MESSAGE,
+  phoneNumber: string = siteContent.contact.mobileNumber,
+  message: string = siteContent.contact.whatsappMessage,
 ): void => {
   if (typeof window === "undefined") return;
   const encodedMessage = encodeURIComponent(message);

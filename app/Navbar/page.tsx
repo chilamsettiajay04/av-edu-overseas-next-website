@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Button from "../components/Button";
 import Navlink from "../components/Navlink";
 import openWhatsApp from "../utils/whatsapp";
+import { siteContent } from "../constants/siteContent";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,13 +14,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   // Define all nav items
-  const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
-    { label: "Testimonials", href: "#testimonials" },
-  ];
+  const navItems = siteContent.navbar.links;
 
   // Show/hide FAB on scroll
   useEffect(() => {
@@ -62,21 +57,20 @@ const Navbar = () => {
     <>
       {/* Main Navbar - Hidden on mobile when scrolling down */}
       <nav
-        className={`w-full bg-color-background fixed top-0 px-mobile lg:px-main border-b border-color-border z-40 transition-transform duration-300 ${
-          showFab && isOpen
-            ? "translate-y-0"
-            : showFab
-              ? "-translate-y-full"
-              : "translate-y-0"
-        }`}
+        className={`w-full bg-color-background fixed top-0 px-mobile lg:px-main border-b border-color-border z-40 transition-transform duration-300 ${showFab && isOpen
+          ? "translate-y-0"
+          : showFab
+            ? "-translate-y-full"
+            : "translate-y-0"
+          }`}
       >
         <div className="max-w-content w-full flex items-center justify-between mx-auto h-16">
           {/* Logo */}
           <div className="w-fit h-fit">
             <a href="#home">
               <img
-                src="./logo.png"
-                alt="logo"
+                src={siteContent.navbar.logo.src}
+                alt={siteContent.navbar.logo.alt}
                 className="w-full h-10 object-contain"
               />
             </a>
@@ -93,14 +87,14 @@ const Navbar = () => {
                 onClick={() => handleNavClick(item.label)}
               />
             ))}
-            <Button label="Contact" onClick={() => openWhatsApp()} size="sm"  />
+            <Button label={siteContent.navbar.cta.label} onClick={() => openWhatsApp()} size="sm" />
           </ul>
 
           {/* Mobile Menu Button in Navbar */}
           <button
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={toggleMenu}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-label={isOpen ? siteContent.navbar.menu.closeAria : siteContent.navbar.menu.openAria}
           >
             <span className="w-6 h-0.5 bg-current"></span>
             <span className="w-6 h-0.5 bg-current"></span>
@@ -114,7 +108,7 @@ const Navbar = () => {
         <button
           onClick={toggleMenu}
           className="md:hidden fixed bottom-6 right-6 z-[55] w-14 h-14 rounded-full bg-color-accent text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-blue-700 hover:scale-110"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-label={isOpen ? siteContent.navbar.menu.closeAria : siteContent.navbar.menu.openAria}
         >
           {isOpen ? (
             <svg
@@ -168,11 +162,10 @@ const Navbar = () => {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className={`flex items-center justify-between p-4 rounded-lg transition-colors ${
-                        activeTab === item.label
-                          ? "bg-blue-50 text-blue-600"
-                          : "hover:bg-gray-50"
-                      }`}
+                      className={`flex items-center justify-between p-4 rounded-lg transition-colors ${activeTab === item.label
+                        ? "bg-blue-50 text-blue-600"
+                        : "hover:bg-gray-50"
+                        }`}
                       onClick={() => handleNavClick(item.label)}
                     >
                       <span className="font-fontweight-medium">
@@ -198,12 +191,15 @@ const Navbar = () => {
 
               {/* Contact Button */}
               <div className="mt-8 pt-6 border-t border-color-border">
-                <Button
-                  label="Contact Us"
-                  onClick={() => openWhatsApp()}
-                  size="lg"
-                  className="w-full"
-                />
+                {/* Contact Button */}
+                <div className="mt-8 pt-6 border-t border-color-border">
+                  <Button
+                    label={siteContent.navbar.cta.mobileLabel}
+                    onClick={() => openWhatsApp()}
+                    size="lg"
+                    className="w-full"
+                  />
+                </div>
               </div>
             </div>
           </div>

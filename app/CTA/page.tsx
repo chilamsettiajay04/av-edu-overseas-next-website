@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import { Calendar, CheckCircle, Phone } from "lucide-react";
 import openWhatsApp from "../utils/whatsapp";
 import makePhoneCall from "../utils/mobile";
+import { siteContent } from "../constants/siteContent";
 
 export default function CTA() {
   return (
@@ -14,8 +15,8 @@ export default function CTA() {
             className="text-fontsize-h1 font-fontweight-bold text-color-text-white leading-lineheight-heading lg:text-center max-w-3xl"
             data-testid="cta-heading"
           >
-            Ready to Begin Your
-            <span className="block mt-2">Global Education Journey?</span>
+            {siteContent.cta.heading.text}
+            <span className="block mt-2">{siteContent.cta.heading.highlight}</span>
           </h2>
 
           {/* Subtext */}
@@ -23,39 +24,23 @@ export default function CTA() {
             className="text-fontsize-body text-color-text-white leading-lineheight-body lg:text-center max-w-2xl opacity-80"
             data-testid="cta-description"
           >
-            Book a free consultation with our expert advisors and discover the
-            best universities and programs tailored to your goals.
+            {siteContent.cta.subtext}
           </p>
 
           {/* Benefits List */}
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full max-w-3xl mt-4 items-start justify-start lg:justify-center">
-            <div
-              className="flex items-center gap-3 text-color-text-white"
-              data-testid="benefit-consultation"
-            >
-              <CheckCircle className="w-5 h-5 flex-shrink-0" />
-              <span className="text-fontsize-small lg:text-fontsize-body">
-                Free 30-min consultation
-              </span>
-            </div>
-            <div
-              className="flex items-center gap-3 text-color-text-white"
-              data-testid="benefit-guidance"
-            >
-              <CheckCircle className="w-5 h-5 flex-shrink-0" />
-              <span className="text-fontsize-small lg:text-fontsize-body">
-                Expert guidance
-              </span>
-            </div>
-            <div
-              className="flex items-center gap-3 text-color-text-white"
-              data-testid="benefit-response"
-            >
-              <CheckCircle className="w-5 h-5 flex-shrink-0" />
-              <span className="text-fontsize-small lg:text-fontsize-body">
-                24-hour response time
-              </span>
-            </div>
+            {siteContent.cta.benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 text-color-text-white"
+                data-testid={`benefit-${index}`}
+              >
+                <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                <span className="text-fontsize-small lg:text-fontsize-body">
+                  {benefit}
+                </span>
+              </div>
+            ))}
           </div>
 
           {/* CTA Buttons */}
@@ -64,7 +49,7 @@ export default function CTA() {
             data-testid="cta-buttons"
           >
             <Button
-              label="Book Free Consultation"
+              label={siteContent.cta.buttons.book}
               onClick={() => openWhatsApp()}
               variant="secondary"
               size="lg"
@@ -72,7 +57,7 @@ export default function CTA() {
               data-testid="book-consultation-btn"
             />
             <Button
-              label="Call Us Now"
+              label={siteContent.cta.buttons.call}
               onClick={() => makePhoneCall()}
               variant="secondary"
               size="lg"

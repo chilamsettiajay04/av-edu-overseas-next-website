@@ -1,7 +1,9 @@
+import { ReactNode } from "react";
+
 interface ServiceCardProps {
   title: string;
   description: string;
-  icon?: any;
+  icon?: ReactNode;
   highlighted?: boolean;
   className?: string;
 }
@@ -36,10 +38,9 @@ export default function ServiceCard({
           className={`
             h-9 w-9 flex items-center justify-center
             rounded-md border
-            ${
-              highlighted
-                ? "bg-color-accent text-white border-color-accent"
-                : "border-color-border text-color-text-muted"
+            ${highlighted
+              ? "bg-color-accent text-white border-color-accent"
+              : "border-color-border text-color-text-muted"
             }
           `}
         >

@@ -8,6 +8,8 @@ interface ProcessStepCardProps {
   index?: number;
 }
 
+import { siteContent } from "../constants/siteContent";
+
 export default function ProcessStepCard({
   number,
   title,
@@ -43,7 +45,7 @@ export default function ProcessStepCard({
         className="text-fontsize-caption font-fontweight-bold text-color-text-accent mb-2"
         data-testid={index !== undefined ? `step-number-${index}` : undefined}
       >
-        STEP {number}
+        {siteContent.process.stepLabel} {number}
       </div>
 
       {/* Title */}

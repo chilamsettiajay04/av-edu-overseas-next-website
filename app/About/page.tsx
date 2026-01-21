@@ -1,15 +1,9 @@
 import { Grid } from "lucide-react";
 import SectionTag from "../components/SectionTag";
 
-const images = [
-  "./About/image1.png",
-  "./About/image2.png",
-  "./About/image3.png",
-  "./About/image4.jpg",
-  "./About/image5.jpg",
-  "./About/image6.jpg",
-  "./About/image7.jpg",
-];
+import { siteContent } from "../constants/siteContent";
+
+const images = siteContent.about.images;
 
 const About = () => {
   return (
@@ -23,7 +17,7 @@ const About = () => {
             {/* Glassy Emerald/Teal Tag */}
             <div className="absolute top-5 lg:top-auto lg:bottom-5 left-0 z-10 inline-flex items-center gap-2 px-4 py-2 text-fontsize-caption font-semibold text-color-text-white rounded-r-full backdrop-blur-lg border border-amber-400/30 bg-gradient-to-r from-amber-500/15 to-orange-500/15 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105">
               <Grid className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="whitespace-nowrap">Gallery</span>
+              <span className="whitespace-nowrap">{siteContent.about.galleryLabel}</span>
             </div>
             {/* Top marquee */}
             <div className="relative w-full overflow-hidden">
@@ -57,41 +51,27 @@ const About = () => {
           {/* Text Content */}
           <div className="order-1 lg:order-2 flex flex-col justify-center items-center">
             <div className="space-y-6 lg:space-y-8">
-              <SectionTag variant="accent" label="Our Story" />
+              <SectionTag variant="accent" label={siteContent.about.sectionTag} />
               <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
-                Your Global Education
-                <span className="text-color-text-accent ml-2">Partner</span>
+                {siteContent.about.heading.text}
+                <span className="text-color-text-accent ml-2">{siteContent.about.heading.highlight}</span>
               </h2>
 
               <div className="space-y-4 lg:space-y-6">
-                <p className="text-fontsize-body text-color-text-primary leading-lineheight-body">
-                  Explore over{" "}
-                  <strong className="font-fontweight-semibold">
-                    200 top-tier universities
-                  </strong>{" "}
-                  across 31 countries worldwide. The world is your campus,
-                  offering limitless choices and boundless opportunities for
-                  your academic journey.
-                </p>
-
-                <p className="text-fontsize-body text-color-text-primary leading-lineheight-body">
-                  We at{" "}
-                  <strong className="font-fontweight-semibold">AV Edu</strong>{" "}
-                  AV Edu provide student services by connecting institutions to
-                  students across the globe and to transform individuals by
-                  inspiring and fostering excellence and enabling them to
-                  utilize their full potential thus creating global leaders.
-                </p>
-
-                <p className="text-fontsize-body text-color-text-primary leading-lineheight-body">
-                  We strive to be a one stop solution from Counselling to
-                  Standardized Test Prep, Application to Admission, Overseas
-                  Education Loan Assistance to{" "}
-                  <strong className="font-fontweight-semibold">
-                    Visa Processing
-                  </strong>{" "}
-                  Visa Processing and all other associated allied services
-                </p>
+                {siteContent.about.content.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="text-fontsize-body text-color-text-primary leading-lineheight-body"
+                  >
+                    {paragraph.text}
+                    {paragraph.highlight && (
+                      <strong className="font-fontweight-semibold">
+                        {paragraph.highlight}
+                      </strong>
+                    )}
+                    {paragraph.suffix}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
