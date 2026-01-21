@@ -4,11 +4,16 @@ import Button from "../components/Button";
 import openWhatsApp from "../utils/whatsapp";
 import makePhoneCall from "../utils/mobile";
 import { siteContent } from "../constants/siteContent";
+import { useEffect } from "react";
 
 const HeroSection = () => {
+  useEffect(() => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--initial-vh", `${vh}px`);
+  }, []);
   return (
     <section
-      className="flex flex-col min-h-fit mt-16 pb-16 xl:pb-0 xl:mt-0 xl:min-h-dvh pt-16 w-full px-mobile lg:px-main items-center justify-center relative overflow-hidden bg-color-home-background"
+      className="flex flex-col min-h-[calc(var(--initial-vh,1vh)*100)] xl:min-h-dvh pt-16 w-full px-mobile lg:px-main items-center justify-center relative overflow-hidden bg-color-home-background"
       id="home"
     >
       {/* Content */}
