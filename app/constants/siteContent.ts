@@ -59,7 +59,7 @@ export const siteContent = {
             instagram: { label: "Instagram", href: "#" },
         },
         bottomBar: {
-            copyright: (year: number) => `© ${year} AV Edu. All rights reserved.`,
+            copyright: (year: number) => `copyright © ${year} AV Edu Overseas. All rights reserved.`,
             privacyPolicy: { label: "Privacy Policy", href: "#" },
             termsOfService: { label: "Terms of Service", href: "#" },
         },

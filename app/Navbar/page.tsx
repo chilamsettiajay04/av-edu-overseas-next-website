@@ -13,19 +13,25 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Define all nav items
   const navItems = siteContent.navbar.links;
 
-  // Show/hide FAB on scroll
+  // Show/hide FAB on scroll (only mobile)
   useEffect(() => {
     const handleScroll = () => {
-      // Hide regular nav on scroll down, show on scroll up
-      const scrollPos = window.scrollY;
-      setShowFab(scrollPos > 100);
+      if (window.innerWidth < 768) {
+        const scrollPos = window.scrollY;
+        setShowFab(scrollPos > 100);
+      } else {
+        setShowFab(false); // always show navbar on larger screens
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll); // recalc on resize
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   // Scroll detection to highlight active tab
@@ -47,7 +53,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle click on nav item
   const handleNavClick = (label: string) => {
     setActiveTab(label);
     closeMenu();
@@ -55,14 +60,12 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Main Navbar - Hidden on mobile when scrolling down */}
+      {/* Main Navbar */}
       <nav
-        className={`w-full bg-color-background fixed top-0 px-mobile lg:px-main border-b border-color-border z-40 transition-transform duration-300 ${showFab && isOpen
-          ? "translate-y-0"
-          : showFab
-            ? "-translate-y-full"
-            : "translate-y-0"
-          }`}
+        className={`w-full bg-color-background fixed top-0 px-mobile lg:px-main border-b border-color-border z-40 transition-transform duration-300
+          md:translate-y-0
+          ${showFab && isOpen ? "translate-y-0" : showFab ? "-translate-y-full" : "translate-y-0"}
+        `}
       >
         <div className="max-w-content w-full flex items-center justify-between mx-auto h-16">
           {/* Logo */}
@@ -87,14 +90,22 @@ const Navbar = () => {
                 onClick={() => handleNavClick(item.label)}
               />
             ))}
-            <Button label={siteContent.navbar.cta.label} onClick={() => openWhatsApp()} size="sm" />
+            <Button
+              label={siteContent.navbar.cta.label}
+              onClick={() => openWhatsApp()}
+              size="sm"
+            />
           </ul>
 
-          {/* Mobile Menu Button in Navbar */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={toggleMenu}
-            aria-label={isOpen ? siteContent.navbar.menu.closeAria : siteContent.navbar.menu.openAria}
+            aria-label={
+              isOpen
+                ? siteContent.navbar.menu.closeAria
+                : siteContent.navbar.menu.openAria
+            }
           >
             <span className="w-6 h-0.5 bg-current"></span>
             <span className="w-6 h-0.5 bg-current"></span>
@@ -103,12 +114,16 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Floating Action Button for Mobile */}
+      {/* Mobile FAB */}
       {showFab && (
         <button
           onClick={toggleMenu}
           className="md:hidden fixed bottom-6 right-6 z-[55] w-14 h-14 rounded-full bg-color-accent text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-blue-700 hover:scale-110"
-          aria-label={isOpen ? siteContent.navbar.menu.closeAria : siteContent.navbar.menu.openAria}
+          aria-label={
+            isOpen
+              ? siteContent.navbar.menu.closeAria
+              : siteContent.navbar.menu.openAria
+          }
         >
           {isOpen ? (
             <svg
@@ -142,7 +157,7 @@ const Navbar = () => {
         </button>
       )}
 
-      {/* Mobile Menu Popup - Bottom Sheet Style */}
+      {/* Mobile Menu Popup */}
       {isOpen && (
         <div className="md:hidden fixed inset-0 z-[60]">
           {/* Backdrop */}
@@ -162,10 +177,11 @@ const Navbar = () => {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className={`flex items-center justify-between p-4 rounded-lg transition-colors ${activeTab === item.label
-                        ? "bg-blue-50 text-blue-600"
-                        : "hover:bg-gray-50"
-                        }`}
+                      className={`flex items-center justify-between p-4 rounded-lg transition-colors ${
+                        activeTab === item.label
+                          ? "bg-blue-50 text-blue-600"
+                          : "hover:bg-gray-50"
+                      }`}
                       onClick={() => handleNavClick(item.label)}
                     >
                       <span className="font-fontweight-medium">
@@ -191,15 +207,12 @@ const Navbar = () => {
 
               {/* Contact Button */}
               <div className="mt-8 pt-6 border-t border-color-border">
-                {/* Contact Button */}
-                <div className="mt-8 pt-6 border-t border-color-border">
-                  <Button
-                    label={siteContent.navbar.cta.mobileLabel}
-                    onClick={() => openWhatsApp()}
-                    size="lg"
-                    className="w-full"
-                  />
-                </div>
+                <Button
+                  label={siteContent.navbar.cta.mobileLabel}
+                  onClick={() => openWhatsApp()}
+                  size="lg"
+                  className="w-full"
+                />
               </div>
             </div>
           </div>
