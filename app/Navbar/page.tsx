@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Button from "../components/Button";
 import Navlink from "../components/Navlink";
+import openWhatsApp from "../utils/whatsapp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,7 +93,7 @@ const Navbar = () => {
                 onClick={() => handleNavClick(item.label)}
               />
             ))}
-            <Button label="Contact" size="sm" />
+            <Button label="Contact" onClick={() => openWhatsApp()} size="sm"  />
           </ul>
 
           {/* Mobile Menu Button in Navbar */}
@@ -162,7 +163,6 @@ const Navbar = () => {
 
             {/* Menu Items */}
             <div className="p-6">
-
               <ul className="flex flex-col gap-2">
                 {navItems.map((item) => (
                   <li key={item.label}>
@@ -198,7 +198,12 @@ const Navbar = () => {
 
               {/* Contact Button */}
               <div className="mt-8 pt-6 border-t border-color-border">
-                <Button label="Contact Us" size="lg" onClick={closeMenu}  className="w-full" />
+                <Button
+                  label="Contact Us"
+                  onClick={() => openWhatsApp()}
+                  size="lg"
+                  className="w-full"
+                />
               </div>
             </div>
           </div>

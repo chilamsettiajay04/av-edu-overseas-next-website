@@ -1,5 +1,8 @@
+"use client";
 import Button from "../components/Button";
 import { Calendar, CheckCircle, Phone } from "lucide-react";
+import openWhatsApp from "../utils/whatsapp";
+import makePhoneCall from "../utils/mobile";
 
 export default function CTA() {
   return (
@@ -25,7 +28,7 @@ export default function CTA() {
           </p>
 
           {/* Benefits List */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 w-full max-w-3xl mt-4">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full max-w-3xl mt-4 items-start justify-start lg:justify-center">
             <div
               className="flex items-center gap-3 text-color-text-white"
               data-testid="benefit-consultation"
@@ -62,6 +65,7 @@ export default function CTA() {
           >
             <Button
               label="Book Free Consultation"
+              onClick={() => openWhatsApp()}
               variant="secondary"
               size="lg"
               className="bg-white text-black w-full sm:w-auto"
@@ -69,27 +73,12 @@ export default function CTA() {
             />
             <Button
               label="Call Us Now"
+              onClick={() => makePhoneCall()}
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto text-white hover:text-black"
               data-testid="call-now-btn"
             />
-          </div>
-
-          {/* Contact Info */}
-          <div
-            className="flex flex-col sm:flex-row items-start gap-4 text-color-text-white text-fontsize-small mt-4 opacity-80"
-            data-testid="contact-info"
-          >
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>+1 (555) 000-0000</span>
-            </div>
-            <div className="hidden sm:block">•</div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>Available Mon-Sat, 9AM-6PM</span>
-            </div>
           </div>
         </div>
       </div>

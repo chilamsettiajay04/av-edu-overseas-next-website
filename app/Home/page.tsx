@@ -122,14 +122,16 @@
 //     </div>
 //   );
 // }
-
+"use client";
 import { Play, Users, GraduationCap } from "lucide-react";
 import Button from "../components/Button";
+import openWhatsApp from "../utils/whatsapp";
+import makePhoneCall from "../utils/mobile";
 
 const HeroSection = () => {
   return (
     <section
-      className="flex flex-col min-h-fit mt-16 pb-16 lg:pb-0 lg:mt-0 lg:min-h-dvh pt-16 w-full px-mobile xl:px-main items-center justify-center relative overflow-hidden bg-color-home-background"
+      className="flex flex-col min-h-fit mt-16 pb-16 xl:pb-0 xl:mt-0 xl:min-h-dvh pt-16 w-full px-mobile lg:px-main items-center justify-center relative overflow-hidden bg-color-home-background"
       id="home"
     >
       {/* Content */}
@@ -138,7 +140,7 @@ const HeroSection = () => {
         <div className="flex flex-col gap-6 text-center lg:text-left">
           {/* Heading */}
           <h1 className="text-fontsize-display text-left text-color-text-white leading-lineheight-heading font-fontweight-bold animate-fade-in-up animation-delay-100 ">
-            Where Ambition Meets{" "}
+             Ambition Meets{" "}
             <span className="text-color-text-accent">Opportunity</span>
           </h1>
 
@@ -155,6 +157,7 @@ const HeroSection = () => {
           >
             <Button
               label="Book Free Consultation"
+              onClick={() => openWhatsApp()}
               variant="primary"
               size="lg"
               className="w-full sm:w-auto"
@@ -162,6 +165,7 @@ const HeroSection = () => {
             />
             <Button
               label="Call Us Now"
+              onClick={() => makePhoneCall()}
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto text-white hover:text-black"
@@ -170,8 +174,8 @@ const HeroSection = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex items-center justify-center lg:justify-start gap-6 lg:gap-10 animate-fade-in-up animation-delay-400">
-            <div className="text-center">
+          <div className="flex items-center justify-start  gap-6 lg:gap-10 animate-fade-in-up animation-delay-400">
+            <div className="text-start">
               <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
                 98%
               </div>
@@ -182,7 +186,7 @@ const HeroSection = () => {
 
             <div className="w-px h-12 bg-color-border-divider" />
 
-            <div className="text-center">
+            <div className="text-start">
               <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
                 50+
               </div>
@@ -193,7 +197,7 @@ const HeroSection = () => {
 
             <div className="w-px h-12 bg-color-border-divider" />
 
-            <div className="text-center">
+            <div className="text-start">
               <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
                 10+
               </div>
