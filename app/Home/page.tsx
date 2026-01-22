@@ -56,7 +56,7 @@ const HeroSection = () => {
             />
           </div>
           {/* Trust Indicators */}
-          <div className="flex items-center justify-start  gap-6 lg:gap-10 animate-fade-in-up animation-delay-400">
+          <div className="flex items-center justify-start  gap-6 lg:gap-12 animate-fade-in-up animation-delay-400">
             {siteContent.home.trust.map((item, index) => (
               <div key={index} className="flex items-center">
                 <div className="text-start">
@@ -114,7 +114,7 @@ const HeroSection = () => {
             </div>
 
             {/* Floating Card 2 */}
-            <div className="absolute bottom-20 left-0 bg-white/20 backdrop-blur-xl rounded-2xl p-4 shadow-md animate-float animation-delay-300 ">
+            <div className="absolute bottom-20 left-0 bg-white/20 backdrop-blur-xl rounded-2xl p-4 shadow-md animate-float">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-color-accent to-color-accent-hover flex items-center justify-center">
                   <Users className="w-5 h-5 text-color-text-white" />

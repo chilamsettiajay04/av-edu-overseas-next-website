@@ -1,6 +1,6 @@
 "use client";
 import Button from "../components/Button";
-import { Calendar, CheckCircle, Phone } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import openWhatsApp from "../utils/whatsapp";
 import makePhoneCall from "../utils/mobile";
 import { siteContent } from "../constants/siteContent";
@@ -28,7 +28,7 @@ export default function CTA() {
           </p>
 
           {/* Benefits List */}
-          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full max-w-3xl mt-4 items-start justify-start lg:justify-center">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full max-w-3xl mt-4 items-start justify-start lg:justify-center opacity-80">
             {siteContent.cta.benefits.map((benefit, index) => (
               <div
                 key={index}

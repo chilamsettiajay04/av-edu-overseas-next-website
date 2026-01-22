@@ -1,6 +1,4 @@
 import { Quote, Star } from "lucide-react";
-import { siteContent } from "../constants/siteContent";
-
 interface TestimonialCardProps {
   name: string;
   university: string;
@@ -35,8 +33,7 @@ export default function TestimonialCard({
 
       {/* Testimonial Text */}
       <p className="text-fontsize-body text-color-text-muted leading-lineheight-body mb-6 flex-grow">
-        {content ??
-          siteContent.testimonials.defaultContent}
+        {content}
       </p>
 
       {/* Student Info */}

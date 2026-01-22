@@ -65,6 +65,7 @@ export const siteContent = {
         },
     },
     seo: {
+        metadataBase: new URL("https://www.aveduoverseas.com"),
         title: "AV Edu Overseas – International Education & Visa Guidance",
         description:
             "AV Edu Overseas offers expert guidance for studying abroad, including international education programs, student visa assistance, and personalized support for your overseas education journey.",
@@ -99,10 +100,6 @@ export const siteContent = {
                 "Expert study abroad guidance, visa support, and international education consulting.",
             images: ["/og-image.png"],
         },
-    },
-    testimonials: {
-        defaultContent:
-            "Student feedback about their experience with the consultancy service.",
     },
     about: {
         images: [
@@ -295,6 +292,58 @@ export const siteContent = {
                     "Expert immigration services for overseas relocation, offering personalized assistance with visas, documentation, and legal requirements to ensure a smooth and hassle-free transition to your new country.",
                 color: "text-green-600",
                 bgColor: "bg-green-50",
+            },
+        ],
+    },
+    testimonials: {
+        sectionTag: "Success Stories",
+        heading: {
+            text: "Trusted By Students",
+            highlight: "Worldwide",
+        },
+        description: "Join hundreds of successful students who achieved their dreams of studying abroad with our guidance.",
+        testimonials: [
+            {
+                name: "Rahul Sharma",
+                university: "University of Toronto",
+                country: "Canada",
+                rating: 5,
+                content: "The guidance and support were exceptional. My visa process was smooth and stress-free.",
+            },
+            {
+                name: "Ananya Reddy",
+                university: "University of Melbourne",
+                country: "Australia",
+                rating: 5,
+                content: "They helped me choose the right university and handled everything professionally.",
+            },
+            {
+                name: "Mohammed Faisal",
+                university: "University of Leeds",
+                country: "UK",
+                rating: 5,
+                content: "Highly trustworthy consultancy. Clear communication and honest advice.",
+            },
+            {
+                name: "Rahul Sharma",
+                university: "University of Toronto",
+                country: "Canada",
+                rating: 5,
+                content: "The guidance and support were exceptional. My visa process was smooth and stress-free.",
+            },
+            {
+                name: "Ananya Reddy",
+                university: "University of Melbourne",
+                country: "Australia",
+                rating: 5,
+                content: "They helped me choose the right university and handled everything professionally.",
+            },
+            {
+                name: "Mohammed Faisal",
+                university: "University of Leeds",
+                country: "UK",
+                rating: 5,
+                content: "Highly trustworthy consultancy. Clear communication and honest advice.",
             },
         ],
     },

@@ -1,3 +1,4 @@
+// Process.tsx
 import SectionTag from "../components/SectionTag";
 import ProcessStepCard from "../components/ProcessStepCard";
 import { MessageSquare, FileCheck, GraduationCap, Plane } from "lucide-react";
@@ -41,18 +42,23 @@ export default function Process() {
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {steps.map((step, index) => (
-            <ProcessStepCard
-              key={index}
-              index={index}
-              number={step.number}
-              title={step.title}
-              description={step.description}
-              icon={step.icon}
-            />
-          ))}
+        {/* Steps Container with Connector */}
+        <div className="relative">
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-20">
+            {steps.map((step, index) => (
+              <div key={index} className="relative">
+                <ProcessStepCard
+                  index={index}
+                  number={step.number}
+                  title={step.title}
+                  description={step.description}
+                  icon={step.icon}
+                  totalSteps={steps.length}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

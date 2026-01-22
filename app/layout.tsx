@@ -21,6 +21,7 @@ const geistMono = Geist_Mono({
 /* ---------------- METADATA ---------------- */
 
 export const metadata: Metadata = {
+  metadataBase: siteContent.seo.metadataBase,
   title: siteContent.seo.title,
   description: siteContent.seo.description,
   keywords: siteContent.seo.keywords,

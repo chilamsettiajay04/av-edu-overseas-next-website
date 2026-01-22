@@ -16,9 +16,10 @@
 
   /* TEXT */
   --text-accent: #20b284;
-  --text-primary: #000000;
-  --text-muted: #555555;
-  --text-subtle: #777777;
+  --text-primary: #666666;
+  --text-muted: #7a7a7a;
+  --text-subtle: #9a9a9a;
+
   --text-white: #ffffff;
   --text-black: #000000;
 
