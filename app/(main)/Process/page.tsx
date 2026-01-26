@@ -1,8 +1,9 @@
 // Process.tsx
-import SectionTag from "../components/SectionTag";
-import ProcessStepCard from "../components/ProcessStepCard";
+import SectionTag from "../../components/SectionTag";
+import ProcessStepCard from "../../components/ProcessStepCard";
 import { MessageSquare, FileCheck, GraduationCap, Plane } from "lucide-react";
-import { siteContent } from "../constants/siteContent";
+import { siteContent } from "../../constants/siteContent";
+import ScrollAnimation from "../../components/ScrollAnimation";
 
 export default function Process() {
   const icons = [
@@ -27,7 +28,7 @@ export default function Process() {
     >
       <div className="max-w-content mx-auto w-full">
         {/* Header */}
-        <div className="mb-8 lg:mb-10 space-y-4">
+        <ScrollAnimation variant="fadeUp" className="mb-8 lg:mb-10 space-y-4">
           <div className="flex">
             <SectionTag variant="accent" label={siteContent.process.sectionTag} />
           </div>
@@ -40,14 +41,19 @@ export default function Process() {
           <p className="text-fontsize-body text-color-text-muted leading-lineheight-body">
             {siteContent.process.description}
           </p>
-        </div>
+        </ScrollAnimation>
 
         {/* Steps Container with Connector */}
         <div className="relative">
           {/* Steps Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-20">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
+              <ScrollAnimation
+                key={index}
+                className="relative"
+                variant="fadeUp"
+                delay={index * 0.1}
+              >
                 <ProcessStepCard
                   index={index}
                   number={step.number}
@@ -56,7 +62,7 @@ export default function Process() {
                   icon={step.icon}
                   totalSteps={steps.length}
                 />
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>

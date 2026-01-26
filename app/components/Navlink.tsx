@@ -6,13 +6,19 @@ interface NavlinkProps {
 }
 
 const Navlink = ({ label, href, active, onClick }: NavlinkProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <a
       href={href}
-      onClick={onClick}
-      className={`hover:text-color-text-primary cursor-pointer lg:text-fontsize-small ${
-        active ? "text-color-text-accent" : "text-color-text-muted"
-      }`}
+      onClick={handleClick}
+      className={`hover:text-color-text-primary cursor-pointer lg:text-fontsize-small ${active ? "text-color-text-accent" : "text-color-text-muted"
+        }`}
     >
       {label}
     </a>

@@ -1,7 +1,9 @@
 import { Grid } from "lucide-react";
-import SectionTag from "../components/SectionTag";
+import SectionTag from "../../components/SectionTag";
+import Image from "next/image";
 
-import { siteContent } from "../constants/siteContent";
+import { siteContent } from "../../constants/siteContent";
+import ScrollAnimation from "../../components/ScrollAnimation";
 
 const images = siteContent.about.images;
 
@@ -13,7 +15,7 @@ const About = () => {
     >
       <div className="max-w-content mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-          <div className="order-2 lg:order-1 grid grid-cols-1 gap-1 overflow-hidden rounded-br-3xl rounded-tl-3xl relative">
+          <ScrollAnimation variant="fadeUp" className="order-2 lg:order-1 grid grid-cols-1 gap-1 overflow-hidden rounded-br-3xl rounded-tl-3xl relative">
             {/* Glassy Emerald/Teal Tag */}
             <div className="absolute top-4 lg:top-auto lg:bottom-4 left-0 z-10 inline-flex items-center gap-2 px-4 py-2 text-fontsize-caption font-semibold text-color-text-white rounded-r-full backdrop-blur-lg border border-amber-400/30 bg-gradient-to-r from-amber-500/15 to-orange-500/15 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105">
               <Grid className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -25,11 +27,14 @@ const About = () => {
             <div className="relative w-full overflow-hidden">
               <div className="marquee marquee-left">
                 {[...images, ...images].map((src, index) => (
-                  <img
+                  <Image
                     key={`top-${index}`}
                     src={src}
+                    width={400}
+                    height={225}
                     className="h-56 w-full object-cover aspect-video"
                     alt=""
+                    sizes="(max-width: 768px) 100vw, 400px"
                   />
                 ))}
               </div>
@@ -39,20 +44,23 @@ const About = () => {
             <div className="relative w-full overflow-hidden">
               <div className="marquee marquee-right">
                 {[...images, ...images].map((src, index) => (
-                  <img
+                  <Image
                     key={`bottom-${index}`}
                     src={src}
+                    width={300}
+                    height={225}
                     className="h-56 w-auto object-cover"
                     alt=""
+                    sizes="(max-width: 768px) 50vw, 300px"
                   />
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
 
           {/* Text Content */}
           <div className="order-1 lg:order-2 flex flex-col justify-center items-center">
-            <div className="space-y-6 lg:space-y-8">
+            <ScrollAnimation variant="fadeUp" delay={0.2} className="space-y-6 lg:space-y-8">
               <SectionTag
                 variant="accent"
                 label={siteContent.about.sectionTag}
@@ -80,7 +88,7 @@ const About = () => {
                   </p>
                 ))}
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </div>

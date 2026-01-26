@@ -1,13 +1,17 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Button from "../components/Button";
 import Navlink from "../components/Navlink";
 import openWhatsApp from "../utils/whatsapp";
 import { siteContent } from "../constants/siteContent";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("Home");
+  const [activeTab, setActiveTab] = useState("");
   const [showFab, setShowFab] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
@@ -15,9 +19,31 @@ const Navbar = () => {
 
   const navItems = siteContent.navbar.links;
 
+  // Helper function to handle navigation
+  const handleNavigation = (href: string, label: string) => {
+    const sectionId = href.replace("#", "");
+    const isHomePage = pathname === "/" || pathname === "";
+
+    if (isHomePage) {
+      // Already on home page, just scroll to section
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      // On another route, navigate to home with hash
+      router.push(`/#${sectionId}`);
+    }
+
+    setActiveTab(label);
+    closeMenu();
+  };
+
   // Show/hide FAB on scroll (only mobile)
   useEffect(() => {
     const handleScroll = () => {
+      if (typeof window === 'undefined') return;
+
       if (window.innerWidth < 768) {
         const scrollPos = window.scrollY;
         setShowFab(scrollPos > 100);
@@ -25,6 +51,9 @@ const Navbar = () => {
         setShowFab(false); // always show navbar on larger screens
       }
     };
+
+    // Initial check after mount
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll); // recalc on resize
@@ -34,8 +63,29 @@ const Navbar = () => {
     };
   }, []);
 
-  // Scroll detection to highlight active tab
+  // Determine active tab based on route
   useEffect(() => {
+    const isHomePage = pathname === "/" || pathname === "";
+
+    if (!isHomePage) {
+      // On non-home pages, highlight based on route
+      // Extract route name from pathname (e.g., "/About" -> "About", "/services" -> "services")
+      const routeName = pathname.replace("/", "");
+
+      // Find matching nav item (case-insensitive)
+      const matchingItem = navItems.find(
+        (item) => item.label.toLowerCase() === routeName.toLowerCase()
+      );
+
+      if (matchingItem) {
+        setActiveTab(matchingItem.label);
+      } else {
+        setActiveTab("");
+      }
+      return;
+    }
+
+    // On home page, use scroll-based highlighting
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
 
@@ -49,14 +99,27 @@ const Navbar = () => {
       }
     };
 
+    // Initial check
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname, navItems]);
 
-  const handleNavClick = (label: string) => {
-    setActiveTab(label);
-    closeMenu();
-  };
+  // Handle hash navigation on page load (when coming from another route)
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const sectionId = hash.replace("#", "");
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, [pathname]);
 
   return (
     <>
@@ -70,13 +133,20 @@ const Navbar = () => {
         <div className="max-w-content w-full flex items-center justify-between mx-auto h-16">
           {/* Logo */}
           <div className="w-fit h-fit">
-            <a href="#home">
-              <img
+            <button
+              onClick={() => handleNavigation("#home", "Home")}
+              className="cursor-pointer"
+              aria-label="Go to home"
+            >
+              <Image
                 src={siteContent.navbar.logo.src}
                 alt={siteContent.navbar.logo.alt}
+                width={150}
+                height={40}
                 className="w-full h-10 object-contain"
+                priority
               />
-            </a>
+            </button>
           </div>
 
           {/* Desktop Menu */}
@@ -87,7 +157,7 @@ const Navbar = () => {
                 label={item.label}
                 href={item.href}
                 active={activeTab === item.label}
-                onClick={() => handleNavClick(item.label)}
+                onClick={() => handleNavigation(item.href, item.label)}
               />
             ))}
             <Button
@@ -175,14 +245,12 @@ const Navbar = () => {
               <ul className="flex flex-col gap-2">
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className={`flex items-center justify-between p-4 rounded-lg transition-colors ${
-                        activeTab === item.label
-                          ? "bg-blue-50 text-blue-600"
-                          : "hover:bg-gray-50"
-                      }`}
-                      onClick={() => handleNavClick(item.label)}
+                    <button
+                      className={`w-full flex items-center justify-between p-4 rounded-lg transition-colors ${activeTab === item.label
+                        ? "bg-blue-50 text-blue-600"
+                        : "hover:bg-gray-50"
+                        }`}
+                      onClick={() => handleNavigation(item.href, item.label)}
                     >
                       <span className="font-fontweight-medium">
                         {item.label}
@@ -200,7 +268,7 @@ const Navbar = () => {
                           />
                         </svg>
                       )}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

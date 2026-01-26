@@ -12,7 +12,7 @@ export const siteContent = {
     },
     navbar: {
         logo: {
-            src: "./logo.png",
+            src: "/logo.png",
             alt: "logo",
         },
         links: [
@@ -34,19 +34,19 @@ export const siteContent = {
     footer: {
         company: {
             logo: {
-                src: "./logo.png",
+                src: "/logo.png",
                 alt: "Company Logo",
             },
             description:
-                "Your trusted partner for international education. Helping students achieve their dreams of studying abroad since 2022.",
+                "We are one of the prominent travel agencies that you can find around, we are successfully completed ennumber of trips.. We arrange exceptional tours based on your personal preference to provide the best experience for you. Join us to make your vacation worth going.",
         },
         quickLinks: {
             title: "Quick Links",
             links: [
-                { label: "Home", href: "#home" },
-                { label: "About Us", href: "#about" },
-                { label: "Services", href: "#" },
-                { label: "Testimonials", href: "#testimonials" },
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/About" },
+                { label: "Services", href: "/Services" },
+                { label: "Testimonials", href: "/Testimonials" },
             ],
         },
         contact: {
@@ -103,13 +103,13 @@ export const siteContent = {
     },
     about: {
         images: [
-            "./About/image1.png",
-            "./About/image2.png",
-            "./About/image3.png",
-            "./About/image4.jpg",
-            "./About/image5.jpg",
-            "./About/image6.jpg",
-            "./About/image7.jpg",
+            "/About/image1.png",
+            "/About/image2.png",
+            "/About/image3.png",
+            "/About/image4.jpg",
+            "/About/image5.jpg",
+            "/About/image6.jpg",
+            "/About/image7.jpg",
         ],
         galleryLabel: "Gallery",
         sectionTag: "Our Story",
@@ -346,5 +346,16 @@ export const siteContent = {
                 content: "Highly trustworthy consultancy. Clear communication and honest advice.",
             },
         ],
+    },
+    notFound: {
+        title: "Page Not Found",
+        description: "Oops! The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+        buttonLabel: "Back to Home",
+        code: 404
+    },
+    offline: {
+        title: "No Internet Connection",
+        description: "It looks like you are offline. Please check your internet connection and try again.",
+        buttonLabel: "Retry Connection",
     },
 };

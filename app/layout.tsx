@@ -3,10 +3,7 @@ import { siteContent } from "./constants/siteContent";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 
-import Navbar from "./Navbar/page";
-import CTA from "./CTA/page";
-import Footer from "./Footer/page";
-import Home from "./Home/page";
+import OfflineStatus from "./components/OfflineStatus";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,20 +46,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-color-background`}
       >
+        <OfflineStatus />
         {/* App Wrapper */}
         <div className="min-h-[100dvh] flex flex-col overflow-x-hidden">
-          {/* Navbar */}
-          <Navbar />
-          <Home />
-
-          {/* Main Content */}
-          <main className="flex-1 w-full max-w-[1400px] mx-auto">
-            {children}
-          </main>
-
-          {/* CTA & Footer */}
-          <CTA />
-          <Footer />
+          {children}
         </div>
       </body>
     </html>

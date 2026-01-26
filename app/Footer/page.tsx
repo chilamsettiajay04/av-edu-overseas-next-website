@@ -9,6 +9,8 @@ import {
   Instagram,
 } from "lucide-react";
 import { siteContent } from "../constants/siteContent";
+import ScrollAnimation from "../components/ScrollAnimation";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,11 +20,12 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="max-w-content mx-auto px-mobile lg:px-main py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 lg:gap-12">
-          {/* Company Info */}
-          <div className="space-y-4" data-testid="footer-company">
-            <img
+          <ScrollAnimation variant="fadeUp" className="space-y-4" data-testid="footer-company">
+            <Image
               src={siteContent.footer.company.logo.src}
               alt={siteContent.footer.company.logo.alt}
+              width={160}
+              height={40}
               className="w-auto h-10 object-contain brightness-0 invert"
             />
             <p className="text-fontsize-small text-color-text-white opacity-80 leading-lineheight-body">
@@ -66,11 +69,13 @@ export default function Footer() {
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
-          </div>
+          </ScrollAnimation>
 
           <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
             {/* Quick Links */}
-            <div
+            <ScrollAnimation
+              variant="fadeUp"
+              delay={0.1}
               className="space-y-4 min-w-fit"
               data-testid="footer-quick-links"
             >
@@ -89,10 +94,15 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </ScrollAnimation>
 
             {/* Contact Info */}
-            <div className="space-y-4" data-testid="footer-contact">
+            <ScrollAnimation
+              variant="fadeUp"
+              delay={0.2}
+              className="space-y-4"
+              data-testid="footer-contact"
+            >
               <h3 className="text-fontsize-h3 font-fontweight-bold text-color-text-white opacity-80">
                 {siteContent.footer.contact.title}
               </h3>
@@ -131,13 +141,16 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 text-fontsize-caption">
+      <ScrollAnimation
+        variant="fadeIn"
+        className="border-t border-white/10 text-fontsize-caption"
+      >
         <div className="max-w-content mx-auto px-mobile lg:px-main py-6">
           <div className="flex flex-col md:flex-row items-start justify-between gap-4 text-fontsize-small text-color-text-white opacity-60">
             <p data-testid="copyright">
@@ -162,7 +175,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </ScrollAnimation>
     </footer>
   );
 }

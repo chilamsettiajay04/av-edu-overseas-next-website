@@ -1,7 +1,7 @@
 "use client";
-import SectionTag from "../components/SectionTag";
-import StatCard from "../components/StatCard";
-import ServiceCard from "../components/ServiceCard";
+import SectionTag from "../../components/SectionTag";
+import StatCard from "../../components/StatCard";
+import ServiceCard from "../../components/ServiceCard";
 import {
   Globe,
   Plane,
@@ -13,7 +13,8 @@ import {
   Home,
   Compass,
 } from "lucide-react";
-import { siteContent } from "../constants/siteContent";
+import { siteContent } from "../../constants/siteContent";
+import ScrollAnimation from "../../components/ScrollAnimation";
 
 export default function Services() {
   const iconMap = [
@@ -38,7 +39,7 @@ export default function Services() {
       {/* Main Content */}
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8 lg:mb-10">
         {/* Text Content */}
-        <div className="space-y-6 lg:space-y-8">
+        <ScrollAnimation variant="fadeUp" className="space-y-6 lg:space-y-8">
           <SectionTag variant="accent" label={siteContent.services.sectionTag} />
           <h2 className="text-fontsize-h1 font-fontweight-medium text-color-text-primary leading-lineheight-heading">
             {siteContent.services.heading.text}
@@ -56,38 +57,40 @@ export default function Services() {
               </p>
             ))}
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 gap-4 lg:gap-6">
-          <StatCard
-            value={siteContent.services.stats[0].value}
-            label={siteContent.services.stats[0].label}
-            icon={<Globe className="w-16 h-16 lg:w-20 lg:h-20" />}
-          />
-          <StatCard
-            value={siteContent.services.stats[1].value}
-            label={siteContent.services.stats[1].label}
-            icon={<Trophy className="w-16 h-16 lg:w-20 lg:h-20" />}
-          />
-          <StatCard
-            value={siteContent.services.stats[2].value}
-            label={siteContent.services.stats[2].label}
-            icon={<Building className="w-16 h-16 lg:w-20 lg:h-20" />}
-          />
-          <StatCard
-            value={siteContent.services.stats[3].value}
-            label={siteContent.services.stats[3].label}
-            icon={<Clock className="w-16 h-16 lg:w-20 lg:h-20" />}
-          />
-        </div>
+        <ScrollAnimation variant="fadeUp" delay={0.2}>
+          <div className="grid grid-cols-2 gap-4 lg:gap-6">
+            <StatCard
+              value={siteContent.services.stats[0].value}
+              label={siteContent.services.stats[0].label}
+              icon={<Globe className="w-16 h-16 lg:w-20 lg:h-20" />}
+            />
+            <StatCard
+              value={siteContent.services.stats[1].value}
+              label={siteContent.services.stats[1].label}
+              icon={<Trophy className="w-16 h-16 lg:w-20 lg:h-20" />}
+            />
+            <StatCard
+              value={siteContent.services.stats[2].value}
+              label={siteContent.services.stats[2].label}
+              icon={<Building className="w-16 h-16 lg:w-20 lg:h-20" />}
+            />
+            <StatCard
+              value={siteContent.services.stats[3].value}
+              label={siteContent.services.stats[3].label}
+              icon={<Clock className="w-16 h-16 lg:w-20 lg:h-20" />}
+            />
+          </div>
+        </ScrollAnimation>
       </div>
 
       {/* Services Grid Section */}
       <div className="w-full mt-8 lg:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => (
-            <div key={index}>
+            <ScrollAnimation variant="fadeUp" delay={0.1 * index} key={index}>
               {/* If you want to use ServiceCard component, you'll need to update it to accept the new props */}
               <ServiceCard
                 title={service.title}
@@ -95,7 +98,7 @@ export default function Services() {
                 icon={service.icon}
                 highlighted
               />
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

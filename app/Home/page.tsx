@@ -1,13 +1,17 @@
 "use client";
+import Image from "next/image";
 import { Users, GraduationCap } from "lucide-react";
 import Button from "../components/Button";
 import openWhatsApp from "../utils/whatsapp";
 import makePhoneCall from "../utils/mobile";
 import { siteContent } from "../constants/siteContent";
 import { useEffect } from "react";
+import ScrollAnimation from "../components/ScrollAnimation";
 
 const HeroSection = () => {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--initial-vh", `${vh}px`);
   }, []);
@@ -21,62 +25,74 @@ const HeroSection = () => {
         {/* TEXT CONTENT */}
         <div className="flex flex-col gap-6 text-center lg:text-left">
           {/* Heading */}
-          <h1 className="text-fontsize-display text-left text-color-text-white leading-lineheight-heading font-fontweight-bold animate-fade-in-up animation-delay-100 ">
-            {siteContent.home.heading.text}{" "}
-            <span className="text-color-text-accent">
-              {siteContent.home.heading.highlight}
-            </span>
-          </h1>
+          <ScrollAnimation variant="fadeUp" delay={0.1}>
+            <h1 className="text-fontsize-display text-left text-color-text-white leading-lineheight-heading font-fontweight-bold">
+              {siteContent.home.heading.text}{" "}
+              <span className="text-color-text-accent">
+                {siteContent.home.heading.highlight}
+              </span>
+            </h1>
+          </ScrollAnimation>
 
           {/* Sub Heading (IMPORTANT) */}
-          <p className="text-fontsize-body text-left text-color-text-white opacity-70 max-w-xl animate-fade-in-up animation-delay-200">
-            {siteContent.home.subHeading}
-          </p>
+          <ScrollAnimation variant="fadeUp" delay={0.2}>
+            <p className="text-fontsize-body text-left text-color-text-white opacity-70 max-w-xl">
+              {siteContent.home.subHeading}
+            </p>
+          </ScrollAnimation>
 
           {/* CTA Buttons */}
-          <div
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 mt-6 w-full sm:w-auto"
-            data-testid="cta-buttons"
-          >
-            <Button
-              label={siteContent.home.buttons.book}
-              onClick={() => openWhatsApp()}
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto"
-              data-testid="book-consultation-btn"
-            />
-            <Button
-              label={siteContent.home.buttons.call}
-              onClick={() => makePhoneCall()}
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto text-white hover:text-black"
-              data-testid="call-now-btn"
-            />
-          </div>
+          <ScrollAnimation variant="fadeUp" delay={0.3}>
+            <div
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 mt-6 w-full sm:w-auto"
+              data-testid="cta-buttons"
+            >
+              <Button
+                label={siteContent.home.buttons.book}
+                onClick={() => openWhatsApp()}
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto"
+                data-testid="book-consultation-btn"
+              />
+              <Button
+                label={siteContent.home.buttons.call}
+                onClick={() => makePhoneCall()}
+                variant="secondary"
+                size="lg"
+                className="w-full sm:w-auto text-white hover:text-black"
+                data-testid="call-now-btn"
+              />
+            </div>
+          </ScrollAnimation>
           {/* Trust Indicators */}
-          <div className="flex items-center justify-start  gap-6 lg:gap-12 animate-fade-in-up animation-delay-400">
-            {siteContent.home.trust.map((item, index) => (
-              <div key={index} className="flex items-center">
-                <div className="text-start">
-                  <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
-                    {item.value}
+          <ScrollAnimation variant="fadeUp" delay={0.4}>
+            <div className="flex items-center justify-start  gap-6 lg:gap-12">
+              {siteContent.home.trust.map((item, index) => (
+                <div key={index} className="flex items-center">
+                  <div className="text-start">
+                    <div className="text-fontsize-h3 font-fontweight-bold text-color-text-accent">
+                      {item.value}
+                    </div>
+                    <p className="text-fontsize-caption text-color-text-white opacity-60">
+                      {item.label}
+                    </p>
                   </div>
-                  <p className="text-fontsize-caption text-color-text-white opacity-60">
-                    {item.label}
-                  </p>
+                  {index < siteContent.home.trust.length - 1 && (
+                    <div className="w-px h-12 bg-color-border-divider ml-6 lg:ml-10" />
+                  )}
                 </div>
-                {index < siteContent.home.trust.length - 1 && (
-                  <div className="w-px h-12 bg-color-border-divider ml-6 lg:ml-10" />
-                )}
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollAnimation>
         </div>
 
         {/* VISUAL SECTION */}
-        <div className="hidden lg:flex justify-end items-center relative animate-fade-in-up animation-delay-300">
+        <ScrollAnimation
+          variant="fadeUp"
+          delay={0.3}
+          className="hidden lg:flex justify-end items-center relative"
+        >
           <div className="relative w-[470px] h-[470px] 2xl:w-[600px] 2xl:h-[600px]">
             <div className="absolute inset-0 border border-color-accent rounded-full opacity-10" />
             <div className="absolute inset-8 border border-color-accent rounded-full opacity-20" />
@@ -90,10 +106,13 @@ const HeroSection = () => {
             />
 
             {/* Image */}
-            <img
-              src="./About/home_image.webp"
+            <Image
+              src="/About/home_image.webp"
               alt="Global Education"
-              className="absolute z-20 scale-105 rounded-lg"
+              width={600}
+              height={600}
+              className="absolute z-20 scale-105 rounded-lg object-cover"
+              priority
             />
 
             {/* Floating Card 1 */}
@@ -130,10 +149,11 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
 };
 
 export default HeroSection;
+
