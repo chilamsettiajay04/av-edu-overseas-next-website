@@ -12,7 +12,7 @@ export const siteContent = {
     },
     navbar: {
         logo: {
-            src: "/logo.png",
+            src: "./logo.png",
             alt: "logo",
         },
         links: [
@@ -34,7 +34,7 @@ export const siteContent = {
     footer: {
         company: {
             logo: {
-                src: "/logo.png",
+                src: "./logo.png",
                 alt: "Company Logo",
             },
             description:
@@ -103,13 +103,13 @@ export const siteContent = {
     },
     about: {
         images: [
-            "/About/image1.png",
-            "/About/image2.png",
-            "/About/image3.png",
-            "/About/image4.jpg",
-            "/About/image5.jpg",
-            "/About/image6.jpg",
-            "/About/image7.jpg",
+            "./About/image1.png",
+            "./About/image2.png",
+            "./About/image3.png",
+            "./About/image4.jpg",
+            "./About/image5.jpg",
+            "./About/image6.jpg",
+            "./About/image7.jpg",
         ],
         galleryLabel: "Gallery",
         sectionTag: "Our Story",
@@ -156,6 +156,7 @@ export const siteContent = {
         },
     },
     home: {
+        image: "./About/home_image.webp",
         heading: {
             text: "Ambition Meets ",
             highlight: "Opportunity",

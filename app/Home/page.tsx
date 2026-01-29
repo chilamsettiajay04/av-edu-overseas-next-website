@@ -107,7 +107,7 @@ const HeroSection = () => {
 
             {/* Image */}
             <Image
-              src="/About/home_image.webp"
+              src={siteContent.home.image}
               alt="Global Education"
               width={600}
               height={600}
