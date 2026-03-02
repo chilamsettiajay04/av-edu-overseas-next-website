@@ -1,44 +1,35 @@
+// ============================================
+// VERSION 1 - Warm, Personal, Story-Driven
+// ============================================
+
 export const siteContent = {
     global: {
         brandName: "AV Edu Overseas",
         logoAlt: "AV Edu Overseas Logo",
     },
     contact: {
-        address:
-            "PRASHANT COMPLEX, 16-11-486, Opp CMR SHOWROOM, DILSUKHNAGAR, HYDERABAD .",
+        address: "PRASHANT COMPLEX, 16-11-486, Opp CMR SHOWROOM, DILSUKHNAGAR, HYDERABAD .",
         mobileNumber: "918121112165",
         email: "info@aveducation.com",
-        whatsappMessage: "Hello, I’m interested in your services.",
+        whatsappMessage: "Hi, I want to discuss my dreams of studying abroad.",
     },
     navbar: {
-        logo: {
-            src: "./logo.png",
-            alt: "logo",
-        },
+        logo: { src: "./logo.png", alt: "logo" },
         links: [
             { label: "Home", href: "#home" },
             { label: "About", href: "#about" },
+            { label: "Mission", href: "#mission" },
             { label: "Services", href: "#services" },
             { label: "Process", href: "#process" },
             { label: "Testimonials", href: "#testimonials" },
         ],
-        cta: {
-            label: "Contact",
-            mobileLabel: "Contact Us",
-        },
-        menu: {
-            openAria: "Open menu",
-            closeAria: "Close menu",
-        },
+        cta: { label: "Contact", mobileLabel: "Contact Us" },
+        menu: { openAria: "Open menu", closeAria: "Close menu" },
     },
     footer: {
         company: {
-            logo: {
-                src: "./logo.png",
-                alt: "Company Logo",
-            },
-            description:
-                "We are one of the prominent travel agencies that you can find around, we are successfully completed ennumber of trips.. We arrange exceptional tours based on your personal preference to provide the best experience for you. Join us to make your vacation worth going.",
+            logo: { src: "./logo.png", alt: "Company Logo" },
+            description: "We've walked this path with thousands of families. Every student's dream matters to us. Let us help you write your success story.",
         },
         quickLinks: {
             title: "Quick Links",
@@ -49,9 +40,7 @@ export const siteContent = {
                 { label: "Testimonials", href: "/Testimonials" },
             ],
         },
-        contact: {
-            title: "Contact Us",
-        },
+        contact: { title: "Contact Us" },
         socials: {
             facebook: { label: "Facebook", href: "#" },
             twitter: { label: "Twitter", href: "#" },
@@ -66,297 +55,216 @@ export const siteContent = {
     },
     seo: {
         metadataBase: new URL("https://www.aveduoverseas.com"),
-        title: "AV Edu Overseas – International Education & Visa Guidance",
-        description:
-            "AV Edu Overseas offers expert guidance for studying abroad, including international education programs, student visa assistance, and personalized support for your overseas education journey.",
-        keywords: [
-            "AV Edu Overseas",
-            "study abroad",
-            "international education",
-            "student visa guidance",
-            "overseas study consultants",
-            "admissions support",
-        ],
+        title: "AV Edu Overseas – Your Dream, Our Mission",
+        description: "We turn your overseas education dream into reality. Expert guidance for admissions, visas, and finding your path to global universities.",
+        keywords: ["study abroad", "overseas education", "student visa", "university admission", "education consultants"],
         openGraph: {
-            title: "AV Edu Overseas – Study Abroad & Visa Guidance",
-            description:
-                "Get expert guidance for international education, visa processing, and study abroad opportunities with AV Edu Overseas.",
+            title: "AV Edu Overseas – Turn Your Dream Into Reality",
+            description: "Expert guidance for your overseas education journey. Let's make it happen together.",
             url: "https://chilamsettiajay04.github.io/av-edu-overseas-next-website/",
             siteName: "AV Edu Overseas",
-            images: [
-                {
-                    url: "/og-image.png",
-                    width: 1200,
-                    height: 630,
-                    alt: "AV Edu Overseas",
-                },
-            ],
+            images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AV Edu Overseas" }],
             type: "website",
         },
         twitter: {
             card: "summary_large_image",
-            title: "AV Edu Overseas – Study Abroad & Visa Guidance",
-            description:
-                "Expert study abroad guidance, visa support, and international education consulting.",
+            title: "AV Edu Overseas – Your Dream, Our Mission",
+            description: "Your overseas education journey starts here.",
             images: ["/og-image.png"],
         },
     },
     about: {
-        images: [
-            "./About/image1.png",
-            "./About/image2.png",
-            "./About/image3.png",
-            "./About/image4.jpg",
-            "./About/image5.jpg",
-            "./About/image6.jpg",
-            "./About/image7.jpg",
-        ],
+        images: ["./About/image1.png", "./About/image2.png", "./About/image3.png", "./About/image4.jpg", "./About/image5.jpg", "./About/image6.jpg", "./About/image7.jpg"],
         galleryLabel: "Gallery",
-        sectionTag: "Our Story",
-        heading: {
-            text: "Your Global Education",
-            highlight: "Partner",
-        },
+        sectionTag: "Why We Exist",
+        heading: { text: "We Believe In", highlight: "Your Dreams" },
         content: [
             {
-                text: "Explore over ",
-                highlight: "200 top-tier universities",
-                suffix:
-                    " across 31 countries worldwide. The world is your campus, offering limitless choices and boundless opportunities for your academic journey.",
+                text: "More than ",
+                highlight: "200 world-class universities",
+                suffix: " are within your reach. We’ve successfully guided students into leading institutions across 31 countries, turning ambition into real academic success.",
             },
             {
-                text: "We at ",
-                highlight: "AV Edu",
-                suffix:
-                    " AV Edu provide student services by connecting institutions to students across the globe and to transform individuals by inspiring and fostering excellence and enabling them to utilize their full potential thus creating global leaders.",
+                text: "AV Edu Overseas was built from ",
+                highlight: "lived experience",
+                suffix: ". We understand what it truly means to leave home — the uncertainty, the pressure, the expectations, and the hope for something bigger.",
             },
             {
-                text: "We strive to be a one stop solution from Counselling to Standardized Test Prep, Application to Admission, Overseas Education Loan Assistance to ",
-                highlight: "Visa Processing",
-                suffix:
-                    " Visa Processing and all other associated allied services",
+                text: "From your first consultation to the day you board your flight, ",
+                highlight: "we stand with you",
+                suffix: ". Applications, documentation, visa processing, and preparation — we handle the complexity so you can focus on building your future.",
             },
         ],
+        missionVision: {
+            sectionTag: "Mission & Vision",
+            mission: {
+                heading: "Our Mission",
+                content: "To make global education accessible, achievable, and life-changing for every student who dares to dream beyond borders.",
+            },
+            vision: {
+                heading: "Our Vision",
+                content: "To help every student turn their dream of studying abroad into a life-changing reality.",
+            },
+            values: [
+                { icon: "target", label: "Student-First Approach" },
+                { icon: "heart", label: "Honest Guidance" },
+                { icon: "star", label: "Personalized Support" },
+                { icon: "globe", label: "Global Opportunities" },
+            ],
+        },
     },
     cta: {
-        heading: {
-            text: "Ready to Begin Your",
-            highlight: "Global Education Journey?",
-        },
-        subtext:
-            "Book a free consultation with our expert advisors and discover the best universities and programs tailored to your goals.",
-        benefits: [
-            "Free 30-min consultation",
-            "Expert guidance",
-            "24-hour response time",
-        ],
-        buttons: {
-            book: "Book Free Consultation",
-            call: "Call Us Now",
-        },
+        heading: { text: "Take the First Step Toward", highlight: "Your Dream University" },
+        subtext: "No pressure. No confusion. Just expert guidance tailored to you.",
+        benefits: ["No obligation consultation", "Honest guidance", "We answer within 24 hours"],
+        buttons: { book: "Let's Start This Journey", call: "Call Us Today" },
     },
     home: {
         image: "./About/home_image.webp",
-        heading: {
-            text: "Ambition Meets ",
-            highlight: "Opportunity",
-        },
-        subHeading:
-            "Study abroad and let your education go beyond borders. We guide students and partners to the world's top universities.",
-        buttons: {
-            book: "Book Free Consultation",
-            call: "Call Us Now",
-        },
+        heading: { text: "Where Will Your", highlight: "Journey Begin?" },
+        subHeading: "Every big dream begins with a single step. Let us guide you toward your future abroad education.",
+        buttons: { book: "Start My Journey", call: "Call Us Today" },
         trust: [
-            { value: "98%", label: "Visa Success" },
-            { value: "50+", label: "Universities" },
+            { value: "99.9%", label: "Visa Success" },
+            { value: "100+", label: "Universities" },
             { value: "10+", label: "Countries" },
         ],
         floatingCards: {
-            card1: {
-                value: "1000+",
-                label: "Students Trusted",
-            },
-            card2: {
-                value: "Expert Team",
-                label: "2+ Years Experience",
-            },
+            card1: { value: "10+", label: "Study Destinations" },
+            card2: { value: "Expert Team", label: "2+ Years Experience" },
         },
     },
     process: {
         stepLabel: "STEP",
-        sectionTag: "How It Works",
-        heading: {
-            text: "Your Journey To",
-            highlight: "Study Abroad",
-        },
-        description:
-            "We guide you through every step of your international education journey with personalized support and expert advice.",
+        sectionTag: "Your Journey",
+        heading: { text: "From Dream To", highlight: "Reality" },
+        description: "This isn't just paperwork. It's your life we're helping shape. Here's how we make it happen.",
         steps: [
             {
                 number: "01",
-                title: "Free Consultation",
-                description:
-                    "Schedule a personalized consultation to discuss your academic goals, preferred destinations, and program options.",
+                title: "Let's Talk",
+                description: "Share your dreams with us. Tell us what excites you, what scares you, and what you've always wanted to become.",
             },
             {
                 number: "02",
-                title: "Application Support",
-                description:
-                    "Get expert assistance with university selection, document preparation, SOP/LOR writing, and application submission.",
+                title: "Finding Your Path",
+                description: "Together, we discover universities that match your dreams. Your applications tell YOUR story.",
             },
             {
                 number: "03",
-                title: "Admission & Visa",
-                description:
-                    "Receive offer letters from top universities. We handle visa documentation, interview preparation, and submission.",
+                title: "Making It Real",
+                description: "When those acceptance letters arrive, we'll handle the visa maze. You focus on packing your dreams.",
             },
             {
                 number: "04",
-                title: "Pre-Departure",
-                description:
-                    "Complete pre-departure briefing, accommodation assistance, travel arrangements, and on-ground support abroad.",
+                title: "You're Ready",
+                description: "Before you go, we make sure you're prepared for everything. And even after you leave, we're still here.",
             },
         ],
     },
     services: {
-        sectionTag: "Our Services",
-        heading: {
-            text: "Your Trusted Partner For",
-            highlight: "Overseas",
-        },
+        sectionTag: "How We Help",
+        heading: { text: "We're Here For", highlight: "You" },
         intro: [
             {
-                text: "We specialize in comprehensive overseas solutions with ",
-                highlight: "personalized guidance",
-                suffix:
-                    " for every step of your international journey. From student visas to permanent residence.",
+                text: "We don't just process applications. ",
+                highlight: "We champion your dreams",
+                suffix: ". Every student who walks through our doors carries something precious - their future.",
             },
             {
                 text: "With ",
-                highlight: "98% success rate",
-                suffix:
-                    ", we've helped thousands achieve their dreams of studying, working, and living abroad with confidence.",
+                highlight: "a 98% success rate",
+                suffix: ", we've proven that dreams can become reality. But more importantly, we've held hands with families through every approval and every rejection.",
             },
         ],
         stats: [
-            { value: "6+", label: "Services" },
-            { value: "98%", label: "Success Rate" },
-            { value: "50+", label: "Countries" },
+            { value: "10+", label: "Services" },
+            { value: "99.9%", label: "Success Rate" },
+            { value: "10+", label: "Countries" },
             { value: "24/7", label: "Support" },
         ],
         list: [
             {
                 title: "Student Visa",
                 description: "Bachelors, Masters, MBBS, PhD",
-                strongText:
-                    "Our overseas services assist with student visa applications, ensuring a smooth process from documentation to approval, so you can focus on your education abroad. Expert guidance every step of the way.",
+                strongText: "Your visa isn't just a document - it's your entry ticket to a new life. We'll make sure it's perfect.",
                 color: "text-blue-600",
                 bgColor: "bg-blue-50",
             },
             {
                 title: "Air Ticket Booking",
                 description: "International flight booking",
-                strongText:
-                    "Book your international flights with us for unbeatable prices, 24/7 customer support, and seamless booking experience. Explore the world hassle-free with our reliable overseas air ticket services.",
+                strongText: "We find flights that fit your budget. Because your journey abroad should start stress-free.",
                 color: "text-indigo-600",
                 bgColor: "bg-indigo-50",
             },
             {
                 title: "Visiting Visa",
                 description: "Hassle-free travel visas",
-                strongText:
-                    "Our overseas visiting visa service ensures a smooth and hassle-free experience for travelers. We handle all visa requirements, offering expert guidance and support for a successful application process.",
+                strongText: "Planning to visit family abroad? Let's make the visa the easiest part of your trip.",
                 color: "text-purple-600",
                 bgColor: "bg-purple-50",
             },
             {
                 title: "PR Services",
                 description: "Permanent residence guidance",
-                strongText:
-                    "Expand your global reach with our premium overseas services. We provide seamless international solutions, ensuring your business thrives in new markets. Trust us for efficiency, expertise, and exceptional support.",
+                strongText: "Dreaming of making another country your home? We guide you through every step.",
                 color: "text-amber-600",
                 bgColor: "bg-amber-50",
             },
             {
                 title: "Travel & Tourism",
                 description: "Pan India & International",
-                strongText:
-                    "Explore India with our bespoke travel and tourism services. From majestic landscapes to vibrant cultures, we offer personalized experiences that capture the essence of this incredible country. Your adventure awaits!",
+                strongText: "India has so much to show the world. Let us help you discover its magic.",
                 color: "text-rose-600",
                 bgColor: "bg-rose-50",
             },
             {
                 title: "Immigration",
                 description: "Overseas relocation assistance",
-                strongText:
-                    "Expert immigration services for overseas relocation, offering personalized assistance with visas, documentation, and legal requirements to ensure a smooth and hassle-free transition to your new country.",
+                strongText: "Moving countries is big. We make it manageable. Your new life starts here.",
                 color: "text-green-600",
                 bgColor: "bg-green-50",
             },
         ],
     },
     testimonials: {
-        sectionTag: "Success Stories",
-        heading: {
-            text: "Trusted By Students",
-            highlight: "Worldwide",
-        },
-        description: "Join hundreds of successful students who achieved their dreams of studying abroad with our guidance.",
+        sectionTag: "Real Stories",
+        heading: { text: "From Our", highlight: "Families" },
+        description: "These aren't just success stories. They're real families who trusted us with their dreams.",
         testimonials: [
             {
                 name: "Rahul Sharma",
                 university: "University of Toronto",
                 country: "Canada",
                 rating: 5,
-                content: "The guidance and support were exceptional. My visa process was smooth and stress-free.",
+                content: "I was terrified about my visa. This team turned my tears of worry into tears of joy.",
             },
             {
                 name: "Ananya Reddy",
                 university: "University of Melbourne",
                 country: "Australia",
                 rating: 5,
-                content: "They helped me choose the right university and handled everything professionally.",
+                content: "They didn't just get me admitted. They believed in me when I didn't believe in myself.",
             },
             {
                 name: "Mohammed Faisal",
                 university: "University of Leeds",
                 country: "UK",
                 rating: 5,
-                content: "Highly trustworthy consultancy. Clear communication and honest advice.",
-            },
-            {
-                name: "Rahul Sharma",
-                university: "University of Toronto",
-                country: "Canada",
-                rating: 5,
-                content: "The guidance and support were exceptional. My visa process was smooth and stress-free.",
-            },
-            {
-                name: "Ananya Reddy",
-                university: "University of Melbourne",
-                country: "Australia",
-                rating: 5,
-                content: "They helped me choose the right university and handled everything professionally.",
-            },
-            {
-                name: "Mohammed Faisal",
-                university: "University of Leeds",
-                country: "UK",
-                rating: 5,
-                content: "Highly trustworthy consultancy. Clear communication and honest advice.",
+                content: "Honest advice when I needed it most. That's what made all the difference.",
             },
         ],
     },
     notFound: {
         title: "Page Not Found",
-        description: "Oops! The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+        description: "Sometimes we take wrong turns. Let's get you back on the path to your dreams.",
         buttonLabel: "Back to Home",
         code: 404
     },
     offline: {
         title: "No Internet Connection",
-        description: "It looks like you are offline. Please check your internet connection and try again.",
+        description: "Even when offline, we're still here for you. Try again when you're back online.",
         buttonLabel: "Retry Connection",
     },
 };
