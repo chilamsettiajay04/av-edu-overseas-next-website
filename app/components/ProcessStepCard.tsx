@@ -20,20 +20,19 @@ export default function ProcessStepCard({
   index,
   totalSteps,
 }: ProcessStepCardProps) {
-  // Determine if this is the first or last card
   const isFirstCard = index === 0;
   const isLastCard = totalSteps !== undefined && index === totalSteps - 1;
 
   return (
     <div
-      className="flex flex-col items-start relative group"
+      className="flex flex-col h-full relative group"
       data-testid={index !== undefined ? `process-step-${index}` : undefined}
     >
       {/* Connecting line - Different styles for first, last, and middle cards */}
       <div
         className={`
-          absolute hidden lg:block top-8 h-0.5 bg-color-accent 
-          group-hover:bg-color-accent transition-all duration-500
+          absolute hidden lg:block top-8 h-0.5 bg-color-accent/30 
+          bg-color-accent transition-all duration-500 ease-out
           ${isFirstCard ? '-left-0 -right-4' : ''}
           ${!isFirstCard && !isLastCard ? '-left-4 -right-4' : ''}
           ${isLastCard ? '-left-4 -right-0' : ''}
@@ -42,7 +41,7 @@ export default function ProcessStepCard({
 
       <div
         className={`
-          w-16 h-16 lg:w-20 lg:h-20
+          w-14 h-14 lg:w-16 lg:h-16
           rounded-tl-2xl rounded-br-2xl
           bg-color-accent
           text-color-text-white
@@ -51,10 +50,8 @@ export default function ProcessStepCard({
           shadow-shadow-md
           relative
           z-20
-          transition-all duration-500
-          group-hover:scale-110
-          group-hover:shadow-shadow-lg
-          group-hover:rotate-3
+          transition-all duration-300 ease-out
+          group-hover:scale-105 group-hover:shadow-lg
         `}
         data-testid={index !== undefined ? `step-icon-${index}` : undefined}
       >
@@ -63,7 +60,7 @@ export default function ProcessStepCard({
 
       {/* Step Number */}
       <div
-        className="text-fontsize-caption font-fontweight-bold text-color-text-accent mb-2 group-hover:translate-x-1 transition-transform duration-300"
+        className="text-fontsize-caption font-fontweight-bold text-color-text-accent mb-2 group-hover:translate-x-1 transition-transform duration-300 ease-out"
         data-testid={index !== undefined ? `step-number-${index}` : undefined}
       >
         {siteContent.process.stepLabel} {number}
@@ -71,7 +68,7 @@ export default function ProcessStepCard({
 
       {/* Title */}
       <h3
-        className="text-fontsize-h3 font-fontweight-bold text-color-text-primary mb-3 leading-lineheight-heading group-hover:text-color-accent transition-colors duration-300"
+        className="text-fontsize-h4 font-fontweight-bold text-color-text-primary mb-3 leading-tight group-hover:text-color-accent transition-colors duration-300 ease-out"
         data-testid={index !== undefined ? `step-title-${index}` : undefined}
       >
         {title}
@@ -79,7 +76,7 @@ export default function ProcessStepCard({
 
       {/* Description */}
       <p
-        className="text-fontsize-body text-color-text-muted leading-lineheight-body group-hover:text-color-text-primary transition-colors duration-300"
+        className="text-fontsize-body text-color-text-muted leading-lineheight-body group-hover:text-color-text-primary transition-colors duration-300 ease-out line-clamp-3"
         data-testid={
           index !== undefined ? `step-description-${index}` : undefined
         }

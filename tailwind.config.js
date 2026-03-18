@@ -68,6 +68,7 @@ module.exports = {
       fontSize: {
         // Font size variables
         "fontsize-display": "var(--font-display)",
+        "fontsize-display-xl": "var(--font-display-xl)",
         "fontsize-h1": "var(--font-h1)",
         "fontsize-h2": "var(--font-h2)",
         "fontsize-h3": "var(--font-h3)",

@@ -10,7 +10,7 @@ const images = siteContent.about.images;
 const About = () => {
   return (
     <section
-      className="flex flex-col min-h-fit w-full px-mobile lg:px-main  py-16 items-center justify-center relative overflow-hidden bg-color-surface-muted"
+      className="flex flex-col min-h-fit w-full px-mobile lg:px-main  py-16 items-center justify-center relative overflow-hidden bg-color-background"
       id="about"
     >
       <div className="max-w-content mx-auto w-full">

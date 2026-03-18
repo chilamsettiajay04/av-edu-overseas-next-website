@@ -74,7 +74,7 @@ export const siteContent = {
         },
     },
     about: {
-        images: ["./About/image1.png", "./About/image2.png", "./About/image3.png", "./About/image4.jpg", "./About/image5.jpg", "./About/image6.jpg", "./About/image7.jpg"],
+        images: ["./About/image1.png", "./About/image2.png", "./About/image3.png", "./About/image6.jpg", "./About/image5.jpg", "./About/image6.jpg", "./About/image7.jpg"],
         galleryLabel: "Gallery",
         sectionTag: "Why We Exist",
         heading: { text: "We Believe In", highlight: "Your Dreams" },
@@ -98,12 +98,12 @@ export const siteContent = {
         missionVision: {
             sectionTag: "Mission & Vision",
             mission: {
-                heading: "Our Mission",
-                content: "To make global education accessible, achievable, and life-changing for every student who dares to dream beyond borders.",
+                heading: "What Drives Us",
+                content: "To make international education attainable, and life-changing for students who aspire to explore opportunities beyond boundaries.",
             },
             vision: {
-                heading: "Our Vision",
-                content: "To help every student turn their dream of studying abroad into a life-changing reality.",
+                heading: "Where We’re Headed",
+                content: "To bridge the gap between ambition and opportunity by making study abroad dreams a reality for every student.",
             },
             values: [
                 { icon: "target", label: "Student-First Approach" },
@@ -121,16 +121,16 @@ export const siteContent = {
     },
     home: {
         image: "./About/home_image.webp",
-        heading: { text: "Where Will Your", highlight: "Journey Begin?" },
+        heading: { text: "Turning Your Dreams into", highlight: "Reality" },
         subHeading: "Every big dream begins with a single step. Let us guide you toward your future abroad education.",
         buttons: { book: "Start My Journey", call: "Call Us Today" },
         trust: [
             { value: "99.9%", label: "Visa Success" },
-            { value: "100+", label: "Universities" },
-            { value: "10+", label: "Countries" },
+            { value: "1000+", label: "Universities" },
+            { value: "30+", label: "Countries" },
         ],
         floatingCards: {
-            card1: { value: "10+", label: "Study Destinations" },
+            card1: { value: "30+", label: "Study Destinations" },
             card2: { value: "Expert Team", label: "2+ Years Experience" },
         },
     },
@@ -180,7 +180,7 @@ export const siteContent = {
         stats: [
             { value: "10+", label: "Services" },
             { value: "99.9%", label: "Success Rate" },
-            { value: "10+", label: "Countries" },
+            { value: "30+", label: "Countries" },
             { value: "24/7", label: "Support" },
         ],
         list: [

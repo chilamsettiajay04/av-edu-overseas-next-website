@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="w-full bg-color-background-inverted text-color-text-white border-t border-color-border">
       {/* Main Footer Content */}
       <div className="max-w-content mx-auto px-mobile lg:px-main py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <ScrollAnimation variant="fadeUp" className="space-y-4" data-testid="footer-company">
             <Image
               src={siteContent.footer.company.logo.src}
@@ -28,7 +28,7 @@ export default function Footer() {
               height={40}
               className="w-auto h-10 object-contain brightness-0 invert"
             />
-            <p className="text-fontsize-small text-color-text-white opacity-80 leading-lineheight-body">
+            <p className="text-fontsize-small text-color-text-white opacity-80 leading-lineheight-body max-w-sm">
               {siteContent.footer.company.description}
             </p>
             {/* Social Media */}
@@ -38,7 +38,7 @@ export default function Footer() {
             >
               <a
                 href="#"
-                className="w-9 h-9 rounded-tl-lg rounded-br-lg bg-white/10 hover:bg-color-accent transition-colors duration-200 flex items-center justify-center"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-color-accent transition-all duration-200 ease-out flex items-center justify-center hover:scale-105"
                 aria-label={siteContent.footer.socials.facebook.label}
                 data-testid="social-facebook"
               >
@@ -46,7 +46,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-9 h-9 rounded-tl-lg rounded-br-lg bg-white/10 hover:bg-color-accent transition-colors duration-200 flex items-center justify-center"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-color-accent transition-all duration-200 ease-out flex items-center justify-center hover:scale-105"
                 aria-label={siteContent.footer.socials.twitter.label}
                 data-testid="social-twitter"
               >
@@ -54,7 +54,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-9 h-9 rounded-tl-lg rounded-br-lg bg-white/10 hover:bg-color-accent transition-colors duration-200 flex items-center justify-center"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-color-accent transition-all duration-200 ease-out flex items-center justify-center hover:scale-105"
                 aria-label={siteContent.footer.socials.linkedin.label}
                 data-testid="social-linkedin"
               >
@@ -62,7 +62,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-9 h-9 rounded-tl-lg rounded-br-lg bg-white/10 hover:bg-color-accent transition-colors duration-200 flex items-center justify-center"
+                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-color-accent transition-all duration-200 ease-out flex items-center justify-center hover:scale-105"
                 aria-label={siteContent.footer.socials.instagram.label}
                 data-testid="social-instagram"
               >
@@ -79,15 +79,15 @@ export default function Footer() {
               className="space-y-4 min-w-fit"
               data-testid="footer-quick-links"
             >
-              <h3 className="text-fontsize-h3 font-fontweight-bold text-color-text-white opacity-80">
+              <h3 className="text-fontsize-h4 font-fontweight-bold text-color-text-white opacity-80">
                 {siteContent.footer.quickLinks.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {siteContent.footer.quickLinks.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-fontsize-small text-color-text-white opacity-80 hover:text-color-accent transition-colors duration-200"
+                      className="text-fontsize-small text-color-text-white opacity-80 hover:text-color-accent transition-colors duration-200 ease-out"
                     >
                       {link.label}
                     </a>
@@ -103,7 +103,7 @@ export default function Footer() {
               className="space-y-4"
               data-testid="footer-contact"
             >
-              <h3 className="text-fontsize-h3 font-fontweight-bold text-color-text-white opacity-80">
+              <h3 className="text-fontsize-h4 font-fontweight-bold text-color-text-white opacity-80">
                 {siteContent.footer.contact.title}
               </h3>
               <ul className="space-y-3">
@@ -123,7 +123,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 flex-shrink-0 text-color-accent" />
                   <a
                     href={`tel:${siteContent.contact.mobileNumber}`}
-                    className="text-fontsize-small text-color-text-white opacity-80 hover:text-color-accent transition-colors duration-200"
+                    className="text-fontsize-small text-color-text-white opacity-80 hover:text-color-accent transition-colors duration-200 ease-out"
                   >
                     {siteContent.contact.mobileNumber}
                   </a>
@@ -135,7 +135,7 @@ export default function Footer() {
                   <Mail className="w-5 h-5 flex-shrink-0 text-color-accent" />
                   <a
                     href={`mailto:${siteContent.contact.email}`}
-                    className="text-fontsize-small text-color-text-white opacity-80 hover:text-color-accent transition-colors duration-200"
+                    className="text-fontsize-small text-color-text-white opacity-80 hover:text-color-accent transition-colors duration-200 ease-out"
                   >
                     {siteContent.contact.email}
                   </a>
@@ -151,15 +151,15 @@ export default function Footer() {
         variant="fadeIn"
         className="border-t border-white/10 text-fontsize-caption"
       >
-        <div className="max-w-content mx-auto px-mobile lg:px-main py-6">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-4 text-fontsize-small text-color-text-white opacity-60">
+        <div className="max-w-content mx-auto px-mobile lg:px-main py-5">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-fontsize-small text-color-text-white opacity-60">
             <p data-testid="copyright">
               {siteContent.footer.bottomBar.copyright(currentYear)}
             </p>
             <div className="flex items-center gap-4" data-testid="legal-links">
               <a
                 href={siteContent.footer.bottomBar.privacyPolicy.href}
-                className="hover:text-color-accent transition-colors duration-200"
+                className="hover:text-color-accent transition-colors duration-200 ease-out"
                 data-testid="link-privacy"
               >
                 {siteContent.footer.bottomBar.privacyPolicy.label}
@@ -167,7 +167,7 @@ export default function Footer() {
               <div className="h-4 w-px bg-white/30"></div>
               <a
                 href={siteContent.footer.bottomBar.termsOfService.href}
-                className="hover:text-color-accent transition-colors duration-200"
+                className="hover:text-color-accent transition-colors duration-200 ease-out"
                 data-testid="link-terms"
               >
                 {siteContent.footer.bottomBar.termsOfService.label}

@@ -17,33 +17,34 @@ export default function TestimonialCard({
   return (
     <div
       className="
+        h-full
         bg-color-surface-muted
         border border-color-border
         rounded-tl-3xl rounded-br-3xl
         p-6 lg:p-8
-        transition-all duration-300
+        transition-all duration-300 ease-out
         hover:-translate-y-1 hover:shadow-lg
         flex flex-col
       "
     >
       {/* Quote Icon */}
       <div className="mb-4">
-        <Quote className="w-8 h-8 text-color-accent opacity-50" />
+        <Quote className="w-6 h-6 text-color-accent opacity-50" />
       </div>
 
       {/* Testimonial Text */}
-      <p className="text-fontsize-body text-color-text-muted leading-lineheight-body mb-6 flex-grow">
+      <p className="text-fontsize-body text-color-text-muted leading-lineheight-body mb-6 line-clamp-4 flex-grow">
         {content}
       </p>
 
       {/* Student Info */}
-      <div className="border-t border-color-border pt-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-fontsize-body font-fontweight-medium text-color-text-primary">
+      <div className="border-t border-color-border pt-4 mt-auto">
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <p className="text-fontsize-body font-fontweight-medium text-color-text-primary truncate">
               {name}
             </p>
-            <p className="text-fontsize-small text-color-text-muted">
+            <p className="text-fontsize-small text-color-text-muted truncate">
               {university}
             </p>
             <p className="text-fontsize-caption text-color-text-subtle">
@@ -52,7 +53,7 @@ export default function TestimonialCard({
           </div>
 
           {/* Rating */}
-          <div className="flex gap-1">
+          <div className="flex gap-0.5 flex-shrink-0">
             {Array.from({ length: rating }).map((_, i) => (
               <Star
                 key={i}

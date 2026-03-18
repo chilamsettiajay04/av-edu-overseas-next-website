@@ -5,19 +5,12 @@ import Button from "../components/Button";
 import openWhatsApp from "../utils/whatsapp";
 import makePhoneCall from "../utils/mobile";
 import { siteContent } from "../constants/siteContent";
-import { useEffect } from "react";
 import ScrollAnimation from "../components/ScrollAnimation";
 
 const HeroSection = () => {
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--initial-vh", `${vh}px`);
-  }, []);
   return (
     <section
-      className="flex flex-col min-h-[calc(var(--initial-vh,1vh)*100)] xl:min-h-dvh pt-16 w-full px-mobile lg:px-main items-center justify-center relative overflow-hidden bg-color-home-background"
+      className="flex flex-col min-h-[calc(100dvh-4rem)] w-full px-mobile lg:px-main items-center justify-center relative overflow-hidden bg-color-home-background"
       id="home"
     >
       {/* Content */}
@@ -26,7 +19,7 @@ const HeroSection = () => {
         <div className="flex flex-col gap-6 text-center lg:text-left">
           {/* Heading */}
           <ScrollAnimation variant="fadeUp" delay={0.1}>
-            <h1 className="text-fontsize-display text-left text-color-text-white leading-lineheight-heading font-fontweight-bold">
+            <h1 className="text-fontsize-display xl:text-fontsize-display-xl text-left text-color-text-white leading-lineheight-heading font-fontweight-bold">
               {siteContent.home.heading.text}{" "}
               <span className="text-color-text-accent">
                 {siteContent.home.heading.highlight}

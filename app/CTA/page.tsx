@@ -49,9 +49,9 @@ export default function CTA() {
           </ScrollAnimation>
 
           {/* CTA Buttons */}
-          <ScrollAnimation variant="fadeUp" delay={0.3}>
+          <ScrollAnimation variant="fadeUp" delay={0.3} className="w-full">
             <div
-              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mt-6 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mt-6 w-full"
               data-testid="cta-buttons"
             >
               <Button
